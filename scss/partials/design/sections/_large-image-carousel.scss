@@ -1,0 +1,156 @@
+.large-image-module
+{
+  color: #fff;
+  max-width: none;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding-bottom:0;
+  .large-image
+  {
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    height:441px;
+    position: relative;
+    
+    @include bp($breakpoint-lg)
+    {
+      height:551px;
+    }
+    .slide-copy
+    {
+      margin-bottom: 30px;
+    }
+  }
+}
+.large-image-module-background {
+  position:absolute;
+  height:100%;
+  width:100%;
+}
+
+
+.large-image__text
+{
+  margin-bottom: 20px;
+  color:white;
+  display:table;
+  height:100%;
+  width:100%;
+  .elements-box
+  {
+    display:table-cell;
+    vertical-align:middle;
+    position:relative;
+    z-index:5;
+  }
+
+  .slide-copy
+  {
+    margin-bottom:35px;
+    margin-top:-20px;
+  }
+
+  p
+  {
+    display:none;
+    @include bp($breakpoint-lg) 
+    {
+      display:inline;
+      @include font-size(1.125); 
+      line-height:1.625em;
+    } //ends lg
+  }
+  .divider
+  {
+    border-color: $white;
+    margin-bottom: 25px;
+    display: inline-block;
+    @include transition-property(width);
+    @include transition-duration(.3s);
+    width: 70px;
+  }
+}
+
+.large-image__overlay
+{
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:$black;
+  @include opacity(0);
+  @include transition-property(opacity);
+  @include transition-duration(.3s);
+  z-index:1;
+}
+
+.large-image-__cta
+{
+  display:inline-block;
+  text-align: left;
+}
+
+.large-image__wrapper
+{
+  padding-top:70px;
+}
+
+.large-image-module__contents
+{
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  &:hover
+  {
+    height:100%;
+    .divider
+    {
+      width: 115px;
+    }
+    .btn--red
+    {
+      background-color:$white;
+      color:$gray--darker;
+      @include box-shadow(rgba(0,0,0,.3) 0px 4px);
+    }
+    .btn--arrow
+    {
+      @extend .icon.cta-arrow-dark;
+    }
+
+    &:active 
+    {
+      .btn--red 
+      {
+        color:white;
+        background-color: $gray--darker;
+        @include box-shadow(rgba(black, .3) 0px 4px);
+       .btn--arrow
+        {
+          @extend .icon.cta-arrow;
+        }
+      }
+    }
+  }
+}
+
+.large-image-module:hover
+{
+  .large-image__overlay
+  {
+    @include opacity(.4);
+  }
+}
+
+a.large-image__cta--full {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: inherit;
+}
+

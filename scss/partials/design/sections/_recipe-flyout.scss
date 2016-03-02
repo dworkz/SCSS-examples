@@ -1,0 +1,435 @@
+////////////////////////
+// Recipe Flyout 
+////////////////////////
+
+.recipe-flyout__wrap {
+  @extend .tile-pattern;
+  border-bottom: 12px solid $red;
+}
+
+.recipe-flyout {
+  padding: 30px 0 20px 0;
+}
+
+.recipe-flyout__row {
+  @extend .clearfix;
+  padding: 0;
+
+  .grid__item {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-family: 'brandon-bld';
+  }
+
+  .btn--red,
+  .btn--white {
+    margin: 0;
+  }
+}
+
+.recipe-flyout__label {
+  @include font-size(.9);
+  margin-bottom: 5px;
+
+  .recipe-flyout__row--various &
+  {
+    margin-top:50px;
+  }
+}
+
+.recipe-flyout__pointer
+{
+  display:none;
+  height: 0;
+  width: 0;
+  border-top: 15px solid #b52d32;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  /* border-bottom: 30px solid #f00; */
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  bottom: -15px;
+  z-index: 8;
+  @include bp($breakpoint-lg)
+  {
+    display:block;
+  }
+}
+
+.recipe-flyout__wrap
+{
+  z-index: 2;
+  width: 100%;
+  display:none;
+  height:0;
+  overflow:hidden;
+  left:0;
+  @include transition-property(height);
+  @include transition-duration(.4s);
+  &.active
+  {
+    height:auto;
+    max-height:100%;
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    top: 176px;
+    position:absolute;
+    &.active
+    {
+      height:460px;
+      max-height:460px;
+    }
+  }
+    
+  .search-bar__wrap {
+    overflow: hidden;
+    @include bp($breakpoint-md-max) {
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+    @include bp($breakpoint-lg) {
+      overflow: auto;
+      position: absolute;
+      right:0;
+      height: 88px;
+    }
+  }
+
+  .search-bar__icon--trigger-wrap {
+      position: absolute;
+      height: 60px;
+      width: 70px;
+      right: 107px;
+
+    @include bp($breakpoint-lg) {
+      display: none;
+    }
+
+    &.active {
+      background-color: $white;
+      .search-bar__icon--trigger {
+        @include retina-sprite(search-glass-lg-black);
+      }
+    }
+
+  } // end .search-bar--trigger-wrap
+
+  .search-bar__icon--trigger {
+    margin: 20px 0 0 24px;
+
+    @include bp($breakpoint-lg) {
+      margin: 0;
+    }
+  }
+
+  .search-bar__submit
+  {
+    border:0;
+    background-color:transparent;
+    font-size:0;
+    color:transparent;
+    text-indent:-9999px;
+    text-transform:capitalize;
+  }
+
+
+  .search-bar {
+    position: relative;
+    height: 100%;
+    background: url('../img/backgrounds/marble-black.jpg') repeat;
+    padding: 20px;
+    display: none;
+    border-top: 2px solid $white;
+
+    @include bp($breakpoint-lg)
+    {
+      display: block;
+      padding: 20px 0 0 0;
+      @include transition-property(right);
+      @include transition-duration(.3s);
+      border-top: 0;
+      right:0;
+      width: 80%;
+      float: right;
+    }
+
+    &.search-bar--recipes
+    {
+      background:transparent;
+      padding:0;
+      right:0;
+      width:100%;
+      
+      @include bp($breakpoint-md-max)
+      {
+        overflow: hidden;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    // Extra query to help width when at smallest desktop size
+    @media (min-width: 960px) and (max-width: 980px) { width: 65%; }
+
+    .search-bar__field {
+      border: none;
+      width: 100%;
+      @include font-size(1.2);
+      text-transform: uppercase;
+      font-family: 'chalet';
+      color: $black;
+      background-color: $white;
+      @include border-radius(25px);
+      padding: 14px 34px 10px 20px;
+      @include placeholder-text-color($gray--light);
+
+      @include bp($breakpoint-lg) {
+        width: 100%;
+        display: block;
+      }
+    } // end .search-bar
+
+
+    .search-bar__icon--field-que {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 10px;
+      width:29px;
+
+      @include bp($breakpoint-lg) {
+        display:block;
+      }
+    }
+
+
+
+    // Search Activated
+    &.active {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 60px;
+      width: 100%;
+      height: auto;
+      z-index: $zindex-dropdown;
+
+      @include bp($breakpoint-lg) {
+        position: relative;
+        display: block;
+        top: inherit;
+        left: inherit;
+        width: auto;
+        right: 0;
+      }
+
+      .search-bar__icon--field-que {
+        display: block;
+      }
+
+      .search-bar__field {
+        display: block;
+      }
+
+    }
+
+
+  } //ends search-bar
+}
+
+.recipe-flyout__close-btn__wrapper
+{
+  @extend .close__btn__wrapper;
+  @extend .grid-construct;
+  position:relative;
+  margin:-30px auto 30px;
+}
+
+.recipe-flyout__close-btn
+{
+  @extend .close__btn;
+}
+
+.recipe-flyout__label
+{
+  color:$gray--darker;
+  text-transform:none;
+}
+
+.recipe-flyout__button--wide .search-bar--recipes
+{
+  display: block;
+  margin-bottom: 30px;
+  border-top: 0;
+}
+
+.search-bar.search-bar--recipes .search-bar__field
+{
+  @include box-shadow(rgba($black, .3) 0px 4px);
+  display:block;
+}
+
+.recipe-flyout__button
+{
+  margin-bottom:30px;
+  padding:0 !important;
+  display:block;
+  .recipe-flyout__row--category &
+  {
+    @include bp($breakpoint-sm)
+    {
+      margin-bottom:15px;
+    }
+  }
+}
+
+.recipe-flyout__option__wrapper
+{
+ top:40px;
+}
+
+.option__wrapper
+{
+  width:100%;
+  @include bp($breakpoint-md)
+  {
+    width:200%;
+  }
+  &.recipe-type__wrapper
+  {
+    right:0;
+  }
+  &.vegetable-type__wrapper
+  {
+    left:0;
+  }
+  &.cooking-type__option__wrapper
+  {
+    @include bp($breakpoint-md)
+    {
+      width:100%;
+    }
+  }
+  .option__element
+  {
+    width:100%;
+    @include bp($breakpoint-md)
+    {
+      width:50%;
+    }
+    float:left;
+  }
+}
+
+.rtype__icon
+{
+  position:absolute;
+  top:50%;
+  left:15px;
+  margin-top:-8px;
+  &.photo
+  {
+    @extend .icon.photo-recipe;
+  }
+  &.vegetarian
+  {
+    @extend .icon.vegetarian-recipe;
+  }
+  &.healthy
+  {
+    @extend .icon.healthy-recipe;
+  }
+  &.slow-cook
+  {
+    @extend .icon.slow-cook-recipe;
+  }
+  &.chef
+  {
+    @extend .icon.chef-recipe;
+  }
+  &.holiday
+  {
+    @extend .icon.holiday-recipe;
+  }
+  &.grilled
+  {
+    @extend .icon.grilled-recipe;
+  }
+  &.member
+  {
+    @extend .icon.member-recipe;
+  }
+  .rtype__button:hover &
+  {
+    &.photo
+    {
+      @extend .icon.photo-recipe--gray;
+    }
+    &.vegetarian
+    {
+      @extend .icon.vegetarian-recipe--gray;
+    }
+    &.healthy
+    {
+      @extend .icon.healthy-recipe--gray;
+    }
+    &.slow-cook
+    {
+      @extend .icon.slow-cook-recipe--gray;
+    }
+    &.chef
+    {
+      @extend .icon.chef-recipe--gray;
+    }
+    &.holiday
+    {
+      @extend .icon.holiday-recipe--gray;
+    }
+    &.grilled
+    {
+      @extend .icon.grilled-recipe--gray;
+    }
+    &.member
+    {
+      @extend .icon.member-recipe--gray;
+    }
+  }
+}
+
+.rtype__button
+{
+  padding-left:45px;
+}
+
+.search-bar--recipes .search-bar__icon--field-que
+{
+  display:block;
+  top:10px;
+}
+
+.btn--stars
+{
+  padding:12px 15px;
+  text-align:center;
+  &:hover
+  {
+    background:$white;
+  }
+  & .icon.star--small--gray
+  {
+    min-width:14px;
+    margin:0 10px;
+    display:inline-block;
+    &:hover
+    {
+      @extend .icon.star--small--red;
+    }
+  }
+}
+

@@ -1,0 +1,1044 @@
+.divider
+{
+  width: 70px;
+  margin-bottom: 35px;
+  border: 2px solid $gray--darker;
+  &.divider--white
+  {
+    border-color:$white;
+  }
+}
+
+.module-container
+{
+//*
+  @extend .clearfix;
+  padding-bottom:70px;
+  margin:0 auto;
+
+  h2
+  {
+    margin-bottom:20px;
+  }
+}
+
+.head-line
+{
+  h2
+  {
+    @include bp($breakpoint-md)
+    {
+      float:left;
+    }
+  }
+  a.btn
+  {
+    @include bp($breakpoint-md)
+    {
+      float:right;
+    }
+  }
+}
+
+.large-image-module+.module-container,
+.large-image-module+.section-header,
+.large-image-module+.module-container.large-image-module+.module-container,
+.marble_bg+.module-container,
+.marble--black+.module-container,
+.marble_bg+.section-header,
+.marble--black+.section-header,
+.hero--single+.module-container,
+.carousel--hero--single+.module-container,
+body.home.corporate-site .carousel--hero+.module-container
+{
+  margin-top:70px;
+}
+.large-image-module+.module-container.marble_bg,
+.large-image-module+.module-container.marble--black,
+.large-image-module+.module-container+.module-container,
+.large-image-module+.large-image-module,
+.large-image-module+.ask-the-chef__wrapper,
+.marble--black+.ask-the-chef__wrapper,
+.marble_bg+.ask-the-chef__wrapper,
+.marble--black+.module-container+.module-container,
+.marble_bg+.module-container+.module-container,
+.hero--single+.module-container+.module-container,
+.carousel--hero--single+.module-container+.module-container,
+body.home.corporate-site .carousel--hero+.module-container+.module-container,
+.recipe__landing__share__links+.asparagus-nav__wrapper.affix
+{
+  margin-top:0;
+}
+
+.module-container+.cta-button-module.main-column-module,
+.three-panel+.large-image-module,
+.three-panel+.ask-the-chef__wrapper,
+.large-image-module+.section-header+.ask-the-chef__wrapper,
+.recipe__landing__share__links+.asparagus-nav__wrapper,
+.large-image-module+.section-header+#end-of-line
+{
+  margin-top:-70px;
+}
+
+.large-image-module+#end-of-line,
+.ask-the-chef__wrapper+#end-of-line,
+.recipe__reviews+#end-of-line,
+.search__results__wrapper+#end-of-line
+{
+  @include bp($breakpoint-sm)
+  {
+    margin-top:70px;
+  }
+}
+
+.text-block--title-only+.large-image__wrapper
+{
+  padding-top:0;
+}
+
+.drop-shadow
+{
+  @include text-shadow($gray--darker 2px 2px 10px);
+  filter: glow(color=$gray--darker,strength=4);
+}
+
+.cta-tile__headline
+{
+  margin-top:20px;
+}
+
+.cta-tile__body-copy
+{
+  color:$gray--darker;
+}
+
+.cta-tile__link
+{
+  text-decoration:none;
+}
+
+.cta-tile__link-text
+{
+  text-decoration:underline;
+  .cta-tile__link:hover &
+  {
+    text-decoration:none;
+  }
+}
+
+.cta-tile
+{
+  margin-bottom:24px;
+}
+
+.contact-us__wrapper
+{
+  margin-top:70px;
+}
+
+.resources-links__link
+{
+  display:block;
+}
+
+/*
+$BUTTON - MAIN CTA
+*/
+.btn--red
+{
+  @include main-btn($red);
+  min-width: 100px;
+  text-decoration: none;
+  display:block;
+  padding-right: 30px;
+
+  @include bp($breakpoint-md)
+  {
+    .panel-card__wrap &
+    {
+      padding:5px 40px 3px 15px;
+    }
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    padding:12px 40px 12px 15px;
+    .panel-card__wrap &
+    {
+      padding:12px 40px 12px 15px;
+    }
+  }
+
+  .btn--arrow
+  {
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-5px;
+    @extend .icon.cta-arrow;
+  }
+  
+  .btn--arrow--up
+  {
+    display:inline-block;
+    @extend .icon.cta-arrow-up-white--large;
+  }
+
+  .btn--reset 
+  {
+    position:absolute;
+    right:16px;
+    top:50%;
+    margin-top:-7px;
+    @extend .icon.cta--reset--white;
+  }
+
+  .btn--plus 
+  {
+    position:absolute;
+    right:16px;
+    top:50%;
+    margin-top:-4px;
+    @extend .icon.plus--small--white;
+  }
+
+  .btn--minus 
+  {
+    position:absolute;
+    right:16px;
+    top:50%;
+    margin-top:-4px;
+    @extend .icon.minus--small--white;
+  }
+
+  &:hover{	
+    background-color:$white;
+    color:$gray--darker;
+    @include box-shadow(rgba(0,0,0,.3) 0px 4px);
+
+    .btn--arrow
+    {
+      @extend .icon.cta-arrow-dark;
+    }
+    
+    .btn--arrow--up
+    {
+      @extend .icon.cta-arrow-up-black--large;
+    }
+
+    .btn--reset 
+    {
+      @extend .icon.cta--reset--brown;
+    }
+
+    .btn--plus 
+    {
+      @extend .icon.plus--small--gray;
+    }
+
+    .btn--minus 
+    {
+      @extend .icon.minus--small--gray;
+    }
+
+      &:active{
+        color:white;
+        background-color: $gray--darker;
+        @include box-shadow(rgba(black, .3) 0px 4px);
+
+        .btn--plus 
+        {
+          @extend .icon.plus--small--white;
+        }
+        .btn--minus 
+        {
+          @extend .icon.minus--small--white;
+        }
+        .btn--arrow
+        {
+          @extend .icon.cta-arrow;
+        }
+        .btn--reset 
+        {
+          @extend .icon.cta--reset--white;
+        }
+        .btn--arrow--up
+        {
+          @extend .icon.cta-arrow-up-white--large;
+        }
+      }
+  }
+
+}
+
+.btn--inactive
+{
+  @include main-btn($gray--inactive);
+  min-width: 100px;
+  text-decoration: none;
+  display:block;
+  padding-right: 30px;
+
+  @include bp($breakpoint-md)
+  {
+    .panel-card__wrap &
+    {
+      padding:5px 40px 3px 15px;
+    }
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    padding:12px 40px 12px 15px;
+    .panel-card__wrap &
+    {
+      padding:12px 40px 12px 15px;
+    }
+  }
+ 
+
+}
+
+
+//for the white bg button.
+.btn--white
+{
+  @include main-btn(white);
+  text-decoration:none;
+  
+  .btn--arrow,
+  .btn--arrow--down
+  {
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-5px;
+    @extend .icon.cta-arrow-dark;
+  }
+
+  .btn--arrow--down
+  {
+    @extend .icon.arrow-down-gray;
+  }
+
+  &:hover
+  {
+    background-color:$gray--darker;
+    color:$white;
+
+    .btn--arrow
+    {
+        @extend .icon.cta-arrow;
+    }
+    .btn--arrow--down
+    {
+      @extend .icon.arrow-down-white;
+    }
+  }
+}
+
+.btn--arrow
+{
+  position:absolute;
+  right:10px;
+  top:50%;
+  margin-top:-5px;
+  @extend .icon.cta-arrow-dark;
+}
+
+//long button
+.btn--red__long
+{
+  @extend .btn--red;
+  width:100%;
+}
+
+.cta-button-module
+{
+  margin-top:1.3em;
+  .btn
+  {
+    @include bp($breakpoint-md)
+    {
+      float:left;
+    }
+  }
+}
+
+.cta-button-module+.main-txt-block
+{
+  margin-top:1.3em;
+}
+
+.module-container.text-block--title-only
+{
+  padding-bottom:0;
+}
+
+/*
+$HEAD LINE - H2 title + cta
+*/
+
+//default ".head-line" is "dark" and has default h2 styles from design/_global.scss
+.head-line--white h2{
+  color:white;
+}
+
+.head-line{
+  .btn--red
+  {
+    margin-top:-3px;
+  }
+}
+
+/*
+ $GENERIC CTA "PANEL CARD" - for Heroes, Maps, Large Images, etc
+ */
+.panel-card{
+  padding-top: 10px;
+  background-image: none;
+  color: white;
+  margin-top: 60px;
+
+  .btn{margin-bottom: 20px;}
+
+  .panel-card__headline
+  {
+    line-height:1.22;
+    @include bp($breakpoint-md)
+    {
+      @include font-size(1);
+      line-height: 1.1em;
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include font-size(2);
+      line-height: 1.22em;
+    }
+  }
+
+  .panel-card__subhead
+  {
+    @include bp($breakpoint-sm)
+    {
+      color:$white;
+    }
+  }
+
+  .panel-card__copy
+  {
+    margin-top:25px;
+    @include font-size(.875);
+    line-height:1.57em;
+
+    @include bp($breakpoint-sm) {
+      margin-top:15px;
+    }
+    @include bp($breakpoint-md)
+    {
+      line-height:1.4em;
+      @include font-size(.75);
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include font-size(.875);
+      line-height:1.57em;
+    }
+  }
+
+  .divider 
+  {
+    border-color:$white;
+  }
+
+  @include bp($breakpoint-md) { 
+
+    // width: 100%;
+    margin-top:30px;
+    display: inline-block;
+    padding: 20px;
+    .divider
+    {
+      border-color:$gray--darker;
+    }
+  } //ends md
+
+  @include bp($breakpoint-lg) {
+
+
+  position: relative;
+  z-index:1000;
+
+
+    // width: 300px;
+
+    display: inline-block;
+    padding: 40px 30px 40px 30px;
+
+    } //ends lg
+  } //ends panel-card
+
+.panel-card--index{
+  @extend .panel-card;
+  color: $gray--darker;
+  background-image: url("../img/backgrounds/main_bg.jpg");
+}
+
+.panel-card--opacity{
+  @extend .panel-card;
+  color: white;
+  background-color: rgba($black, .7);
+  .divider
+  {
+    border-color:$white;
+  }
+  .panel-card__headline
+  {
+    line-height:1.22;
+  }
+}
+
+/*
+$DESC PARAGRAPH
+*/
+.desc{
+  display: inline-block;
+  padding: 10px 0;
+
+  p{
+    line-height: 1.375em;
+    @include font-size(.875);
+    width:70%;
+    padding-bottom:20px;
+  }
+}
+
+//HOVER HIGHLIGHT OVERLAY
+.highlight__screen
+{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:rgba(0,0,0,.6);
+  z-index:2;
+}
+
+.highlight__container
+{
+  position:relative;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*
+==================================================================
+        FORM STYLES: INPUTS, TEXTAREAS, CHECKBOXES, ETC.          
+==================================================================
+*/
+.form__label
+{
+  text-align:right;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-family:'brandon-bld';
+  padding-top:10px;
+
+  @include bp($breakpoint-sm) {
+    text-align: left;
+  }
+}
+
+.form__checkbox__wrapper
+{
+  padding:20px;
+
+  
+  .grid-end
+  {
+     @include breakpoint($breakpoint-md) {
+      margin-right:7.5%;
+     }
+     @include breakpoint($breakpoint-lg) {
+      margin-right:0;
+     }
+   }
+
+  span
+  {
+    padding: 10px;
+  }
+}
+
+.form__checkbox
+{
+  margin:10px;
+  font-size:.8em;
+  //Double-sized Checkboxes
+  -ms-transform: scale(2,2); /* IE */
+  -moz-transform: scale(2,2); /* FF */
+  -webkit-transform: scale(2,2); /* Safari and Chrome */
+  -o-transform: scale(2,2); /* Opera */
+}
+
+.form__input__wrapper
+{
+  margin:0 0 5px;
+  padding-bottom:20px;
+  outline: none;
+  position:relative;
+  &:first-child
+  {
+    margin-top:15px;
+  }
+}
+
+
+.input-wrapper--submit
+{
+  ul li{margin:10px 0;}
+  border:1px solid red;
+}
+
+.form__input
+{
+  font-family:'brandon-bld';
+  text-transform:uppercase;
+}
+
+.form__input,
+.form__checkbox__wrapper
+{
+  background:$white;
+  @include box-shadow(rgba(black, .3) 0px 4px);
+  border:0;
+  @include border-radius(30px);
+  padding: 10px 0 7px 15px;
+  &.error
+  {
+    @include box-shadow(none);
+    border:3px solid $red;
+  }
+}
+
+.form__textarea
+{
+  @extend .form__input;
+  text-transform:none;
+  height: 150px;
+  padding:15px;
+  @include border-radius(15px);
+  font-family:'apercu';
+  font-weight:bold;
+}
+
+input[type=text],
+input[type=email],
+textarea 
+{
+  outline: none;
+
+  .has-error
+  {
+    border: 2px solid $red;
+  }
+}
+
+.form__number {
+  input {
+    font-size: 1em;
+    padding: 10px 25px 7px 25px;
+  }
+}
+
+.form__number__label,
+.form__number-ui,
+.form__number__spinner--plus,
+.form__number__spinner--minus
+{
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 10px; 
+}
+
+.form__number-ui {
+  @include bp($breakpoint-sm)
+  {
+    width: 100%;
+  }
+  @include bp($breakpoint-md)
+  {
+    width: 100%;
+  }
+  @include bp($breakpoint-lg)
+  {
+    width: 50px;
+  }
+}
+
+.form__number__spinner--plus,
+.form__number__spinner--minus {
+  min-width: 0;
+  margin: 0;
+  padding: 9px;
+  vertical-align: middle;
+  text-align: center;
+
+  @include bp($breakpoint-sm)
+  {
+    width:48%;
+    margin-top:10px;
+    float:left;
+  }
+  @include bp($breakpoint-md)
+  {
+    width:48%;
+    margin-top:10px;
+    float:left;
+  }
+  @include bp($breakpoint-lg)
+  {
+    width: 30px;
+    height: 30px;
+    margin-top:0;
+    float:none;
+  }
+  .icon {
+    position: relative;
+    display: inline-block;
+    right: inherit;
+    top: auto;
+    margin-top: 0;
+  }
+}
+.form__number__spinner--minus
+{
+  @include bp($breakpoint-sm)
+  {
+    float:right;
+  }
+  @include bp($breakpoint-md)
+  {
+    float:right;
+  }
+  @include bp($breakpoint-lg)
+  {
+    float:none;
+  }
+}
+
+.assets-form__list-item__number .assets-form__list-item__name
+{
+  text-align:center;
+}
+
+.form__error
+{
+  position:absolute;
+  bottom:0;
+  right:0;
+  color:$red;
+  @include font-size(.75);
+  font-family:'brandon-bld';
+  text-transform:uppercase;
+}
+
+#recaptcha_table
+{
+  tr,td
+  {
+    background:transparent;
+  }
+}
+
+.number-stepper__control
+{
+  margin: 0;
+  padding-right:40px;
+}
+
+.form__file-upload
+{
+  display:none;
+}
+
+#recaptcha_area
+{
+  margin:0 auto;
+}
+
+.form__recaptcha__wrapper
+{
+  @extend .form__textarea;
+  height:auto;
+  margin-bottom:20px;
+  position:relative;
+  @include bp($breakpoint-sm) 
+  {
+    margin-bottom: 0;
+  }
+  .form__error
+  {
+    bottom:-24px;
+  }
+  #recaptcha_table,
+  #recaptcha_area
+  {
+    position: relative !important;
+    max-width: 100% !important;
+    width: auto !important;
+    #recaptcha_image,
+    #recaptcha_image img
+    {
+      width:auto !important;
+      height:auto !important;
+      max-width:100%;
+    }
+    #recaptcha_image span 
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .recaptcha_r2_c1,
+    .recaptcha_r3_c1,
+    .recaptcha_r4_c4
+    {
+      display:none;
+    }
+    #recaptcha_response_field
+    {
+      padding:5px 5px 5px 10px !important;
+      font-family:'apercu';
+      @include border-radius(30px);
+    }
+  }
+}
+
+#recaptcha_audio_download
+{
+  margin-top: 30px;
+  display: block;
+}
+#recaptcha_switch_audio_btn,
+#recaptcha_switch_img_btn,
+#recaptcha_reload_btn,
+#recaptcha_whatsthis_btn
+{
+  position:relative;
+  z-index:5;
+}
+
+.form__error--header
+{
+  color:$red;
+  @extend .alpha;
+}
+.form__error--large
+{
+  color:$red;
+  @include font-size(1.33);
+}
+
+input, textarea
+{
+  @include placeholder-text-color($gray--light);
+}
+
+.submit-recipe__label--required
+{
+  
+  @include font-size(1.2);
+  color:$red;
+  text-transform: uppercase;
+  font-family:'brandon-bld';
+  text-align:left;
+  @include bp($breakpoint-md)
+  {
+    text-align:right;
+  }
+}
+
+// .icon.minus--small--white
+// {
+//   position:absolute;
+//   top:50%;
+//   margin-top:-3px;
+//   right:10px;
+// }
+
+// "Select" Styles - phony select element built of <a> tags
+.select__label
+{
+  margin-top:20px;
+  font-family:'apercu';
+  font-weight:bold;
+  width:100%;
+}
+
+.select__element
+{
+  z-index:5;
+  position:relative;
+  width:100%;
+  html.no-touch &:hover,
+  html.touch &.active
+  {
+    z-index:6;
+  }
+}
+
+@include breakpoint($breakpoint-md) {
+  .cooking-type__select__wrapper .select__element {
+    z-index: 100;
+  }
+}
+
+@include breakpoint($breakpoint-sm) {
+  .cooking-type__select__wrapper .select__element {
+    z-index: 100;
+  }
+}
+
+.option__wrapper
+{
+  position:absolute;
+  z-index:5;
+  display:none;
+  top:30px;
+  right:0;
+  width:100%;
+  padding:10px 0 0;
+  background:transparent;
+  html.no-touch .select__element:hover &,
+  html.touch .select__element.active &
+  {
+    display:block;
+  }
+}
+
+.option__wrapper--inner
+{
+  padding:0;
+  overflow:hidden;
+  @include border-radius(15px);
+  &:hover
+  {
+    background:$white;
+  }
+}
+
+.option__element
+{
+  text-decoration:none;
+  color:$red;
+  display:block;
+  margin:0;
+  width:100%;
+  padding:10px 20px;
+  position:relative;
+  @include font-size(1.3);
+  html.no-touch .btn--white:hover & .btn--arrow,
+  html.touch .btn--white.active & .btn--arrow
+  {
+    @extend .icon.cta-arrow-dark;
+  }
+  &:hover
+  {
+    background:$gray--darker;
+    color:$white;
+    html.no-touch .btn--white:hover &:hover .btn--arrow,
+    html.touch .btn--white.active &:hover .btn--arrow
+    {
+      @extend .icon.cta-arrow;
+    }
+  }
+  &.selected
+  {
+    background:$red;
+    color:$white;
+    html.no-touch .btn--white:hover &.selected .btn--arrow,
+    html.touch .btn--white.active &.selected .btn--arrow
+    {
+      @extend .icon.cta-arrow;
+    }
+    &:hover
+    {
+      background:$gray--darker;
+    }
+  }
+}
+
+
+//Close Button
+
+.close__btn__wrapper
+{
+  @include bp($breakpoint-lg)
+  {
+    position: relative;
+  }
+}
+
+.close__btn{
+  cursor:pointer;
+  position: absolute;
+  right:0;
+  top:0;
+
+  padding:13px 50px 11px 20px;
+  height:50px;
+
+  background-color: rgba(black,.3);
+
+  text-transform: uppercase;
+
+  font-family: 'brandon-bld';
+  @include font-size(1.2);
+}
+
+.icon.x
+{
+  position:absolute;
+  top:50%;
+  margin-top:-9px;
+  right:20px;
+}
+
+/* =============================================================================
+ DRAWER TOGGLE ICON
+============================================================================= */
+
+.drawer-toggle--large {
+  display: block;
+  .icon {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    @include retina-sprite(minus--xl--red);
+  }
+  &.collapsed {
+    .icon {
+      @include retina-sprite(plus--xl--red);
+    }
+  }
+}
+
+.drawer-toggle--medium {
+  display: block;
+  padding-right: 20px;
+  .icon {
+    position:absolute;
+    top:50%;
+    right: 0;
+    margin-top:-8px;
+    padding:0;
+    @include retina-sprite(minus--large--red);
+  }
+  &.collapsed {
+    .icon {
+      @include retina-sprite(plus--large--red);
+    }
+  }
+}

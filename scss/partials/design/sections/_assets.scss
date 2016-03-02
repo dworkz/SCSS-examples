@@ -1,0 +1,352 @@
+/* 
+ MEDIA ASSETS
+ POINT OF SALES
+ */
+
+body.page-template-media-assets-php
+{
+  .page-title--plain
+  {
+    padding-bottom:0;
+  }
+  .text-block .divider
+  {
+    border:transparent;
+  }
+}
+
+.assets__panels {
+  @extend .clearfix;
+  border-top:1px solid $gray--darker;
+}
+
+.assets__row,
+.assets-form__list-row {
+  border-bottom: 1px solid $gray--darker;
+  padding-top: 25px;
+}
+
+.assets__row {
+  .collapse {
+    display: block;
+    height: 0;
+
+    &.in {
+      height: auto;
+    }
+  }
+}
+
+.assets__row-heading {
+  position: relative;
+}
+
+.assets__row-title {
+  color: $red;
+  padding-right: 40px
+} 
+
+.assets__toggle {
+  display: block;
+  position: relative;
+  @extend .drawer-toggle--large;
+}
+
+.assets__list-item  {
+  position: relative;
+  padding-bottom: 40px;
+
+}
+
+.assets__list-item__image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  img {
+    position: absolute;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+}
+
+.assets__list-item__number {
+  padding-bottom: 10px;
+  overflow:hidden;
+}
+
+.assets__cta-row {
+  margin: 0 0 10px;
+  text-align: right;
+  @include bp($breakpoint-sm)
+  {
+    margin-bottom:55px;
+  }
+  .btn {
+    @include bp($breakpoint-sm) {
+      display: block;
+      margin-left: 0;
+    }
+    display: inline-block;
+    text-align: left;
+    min-width: 160px;
+    margin-left: 20px;
+  }
+  body.page-template-pos-php &,
+  body.page-template-media-assets-php &
+  {
+    margin: 30px 0 -30px;
+  }
+
+  body.page-template-submit-a-recipe-php &
+  {
+    margin-bottom: 24px;
+  }
+}
+
+.assets__order-tracker {
+  display: block;
+  position: fixed;
+  right: 0;
+  background-color: $red;
+  padding: 30px 27px 30px 20px;
+  color: $white;
+  top: 60px;
+  width:230px;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include bp($breakpoint-lg) {
+    top: 88px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 20px;
+  }
+}
+
+.assets__order-tracker__notice
+{
+  display:block;
+  position:fixed;
+  right:245px;
+  top:60px;
+  display:none;
+  padding:30px 20px;
+  color:$white;
+  background:$red;
+  text-decoration:none;
+  @include bp($breakpoint-lg)
+  {
+    top: 88px;
+  }
+}
+
+/* 
+  ASSETS FORM 
+*/
+
+.assets-form__list {
+  @extend .clearfix;
+  margin-bottom: 75px;
+}
+
+.assets-form__list-row {
+  padding-bottom: 35px;
+}
+
+.assets-form__list-row--head-row {
+  border-bottom: 0px;
+  padding-bottom: 0;
+}
+
+.assets-form__list-head--quantity {
+  @include bp($breakpoint-sm) {
+    display: none;
+  }
+}
+
+.assets-form__list-item__name,
+.assets-form__list-item__details,
+.assets-form__list-item__number {
+  font-family: 'brandon-bld';
+  text-transform: uppercase;
+  .pos &
+  {
+    margin-top:15px;
+  }
+}
+
+.assets-form__list-item__name,
+.assets-form__list-item__number  {
+  @include bp($breakpoint-sm) {
+    @include font-size(1.25);
+  }
+  @include bp($breakpoint-md) {
+    @include font-size(1.5);
+  }
+}
+
+.assets-form__list-head--name,
+.assets-form__list-head--quantity {
+  @include bp($breakpoint-sm) {
+    @include font-size(1.5);
+  }
+  @include bp($breakpoint-md) {
+    @include font-size(1.75);
+  }
+  @include bp($breakpoint-lg) {
+    @include font-size(2);
+  }
+}
+
+.assets-form__list-item__number {
+  text-align: left;
+  @include bp($breakpoint-sm) {
+    .visible-sm {
+        display: inline-block;
+    }
+  }
+  @include bp($breakpoint-md) {
+    text-align: center;
+  }
+}
+
+
+.assets-form__list-item__cta {
+  text-align: right;
+  .btn {
+    @include bp($breakpoint-sm) {
+      display: block;
+      margin-left: 0;
+    }
+    display: inline-block;
+    text-align: left;
+    min-width: 160px;
+    margin-left: 20px;
+  }
+}
+
+.assets-form__heading {
+  margin-bottom: 20px;
+}
+
+.assets-form__form {
+  @extend .clearfix;
+}
+
+.assets-form__form-row {
+  padding-bottom: 20px;
+}
+
+.assets-form__label {
+  @include bp($breakpoint-sm) {
+    text-align: left;
+  }
+  text-align: right;
+}
+
+.assets-form__input {
+  position: relative;
+  min-height: 35px;
+  font-family:'brandon-bld';
+  @include font-size(.75);
+  text-transform:uppercase;
+}
+
+.assets-form__select-ui {
+  @include main-btn(white);
+  text-decoration:none;
+  @include border-radius(20px);
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  overflow:hidden;
+  color:$gray;
+  &.selected
+  {
+    color:$black;
+  }
+
+  &.active {
+    z-index: 700;
+  }
+  &.error
+  {
+    @include box-shadow(none);
+    border:3px solid $red;
+  }
+
+    .btn--arrow--down
+    {
+      @extend .icon.arrow-down-gray;
+      position:absolute;
+      right:10px;
+      top:50%;
+      margin-top:-5px;
+    }
+}
+
+.assets-form__select-ui__toggle {
+  position: relative;
+  padding: 9px 10px 9px 15px;
+}
+
+.assets-form__select-ui__list {
+  display: none;
+  // position: absolute;
+
+  &.active {
+    display: block;
+    z-index: 700;
+  }
+}
+
+.assets-form__select-ui__list-item {
+  width:50%;
+  float:left;
+  .form__select-ui__list--country &
+  {
+    width:100%;
+    float:none;
+  }
+  a {
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+
+  }
+}
+
+.assets-form__select {
+  display: none;
+}
+
+.assets-form__input #recaptcha_area
+{
+  float:right;
+}
+
+.assets__select__wrapper
+{
+  height:61px;
+}

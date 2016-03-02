@@ -1,0 +1,248 @@
+/*
+$FOOTER LINKS
+*/
+.footer-social-catch{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top:0px;
+  .footer__wrapper{
+    position: relative;
+    @extend .marble--gray;
+    @include bp($breakpoint-md)
+    {
+      padding: 15px;
+    }
+    @include bp($breakpoint-lg) 
+    {
+      position: static;
+    }
+    ul.footer__wrapper-inner{
+      display: none;
+      overflow: auto;
+      margin-bottom: 0;
+      position: relative;
+      padding: 10px 0;
+      @include bp($breakpoint-md) {
+        display: block;
+      }
+      li {
+        float: left;
+        text-transform: uppercase;
+        display: block;
+        padding: 0 10px;
+        &:first-child
+        {
+          padding-left:0;
+        }
+        a {
+          color: $gray--darker;
+          text-decoration: none;
+          font-family: 'brandon-bld', sans-serif;
+          @include font-size(.75);
+          &:hover {
+            color: $red;
+          }
+        } //ends: a
+      }
+      @include bp($breakpoint-lg) {
+        @include font-size(.875);
+        &:hover {
+          color:$red;
+        }
+      }
+    }
+    
+    /*
+    $FOOTER ICONS
+    */
+    ul.footer__social-icon__wrapper{
+      width: 100%;
+      overflow: hidden;
+      @include bp($breakpoint-lg) {
+        top: 0px;
+        position: absolute;
+        right: 0px;
+        width: 27%;
+      }
+      li{
+        display: block;
+        float: left;
+        width: 20%;
+        @for $i from 1 through 5 {
+          @if $i % 2 == 0 { 
+            &.footer--icons--#{$i} {
+              background: $red--dark;
+            };
+          } //find that color.
+          @else {
+            &.footer--icons--#{$i} {
+              background: $red;
+            };
+          }
+        }
+        a{
+          display: table;
+          height: 69px;
+          width:100%;
+          text-align: center;
+          &.footer__social-icon--alt
+          {
+            background-color:$white;
+            @include bp($breakpoint-sm)
+            {
+              display:none;
+            }
+            @include bp($breakpoint-md)
+            {
+              display:none;
+            }
+            @include bp($breakpoint-lg)
+            {
+              display:table;
+            }
+          }
+          .footer__table--inner
+          {
+            display:table-cell;
+            vertical-align:middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include bp($breakpoint-lg)
+{
+  .footer__social-icon--primary
+  {
+    @include transition-property(margin-top);
+    @include transition-duration(.2s);
+    li:hover &
+    {
+      margin-top:-69px;
+    }
+  }
+}
+
+html, body 
+{
+  height: 100%
+}
+
+#wrap
+{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  padding-top: 60px;
+  @include bp($breakpoint-md)
+  {
+    margin: 0 auto -139px;
+  }
+  @include bp($breakpoint-lg)
+  {
+    margin: 0 auto -69px;
+    padding-top: 88px;
+    body.artichoke-site.home &
+    {
+      padding-top:128px;
+    }
+  }
+  body.admin-bar &
+  {
+    padding-top:28px;
+    @include bp($breakpoint-lg)
+    {
+      padding-top:96px;
+    }
+    body.home &
+    {
+      padding-top:130px;
+    }
+    body.has-crisis &
+    {
+      padding-top:0;
+    }
+  }
+  body.has-crisis &
+  {
+    padding-top:0;
+  }
+}
+
+.btn--scroll-to-top
+{
+  min-width: 65px;
+  position: fixed;
+  bottom: 1em;
+  right: 30px;
+  z-index: 99;
+  text-align: center;
+  display: block;
+  padding: 12px 10px;
+  html.touch &:hover
+  {
+    background-color:$red;
+    @include box-shadow(0 4px #f19c9f);
+    .btn--arrow--up
+    {
+      @extend .icon.cta-arrow-up-white--large;;
+    }
+  }
+}
+
+.back-to-top__text
+{
+  margin-right:5px;
+}
+
+@include bp($breakpoint-sm)
+{
+  .large-image-module+#end-of-line,
+  .marble_bg+#end-of-line,
+  .marble--black+#end-of-line,
+  .digital-cookbooks+#end-of-line
+  {
+    margin-bottom:90px;
+  }
+}
+
+/* 
+ PUSH HAS DUAL FUNCTION: 
+ 1: USED TO STICK THE FOOTER
+ 2: ACTS AS A JAVASCRIPT LISTENER FOR MEDIA QUERIES 
+
+ Script location: assets/js/views/header.js
+ */
+
+#push
+{
+  @include bp($breakpoint-sm) 
+  {
+    color: rgb(255, 0, 0); // JS LISTENER
+  }
+  @include bp($breakpoint-md)
+  {
+    height: 139px;
+    color: rgb(0, 255, 0); // JS LISTENER
+  }
+  @include bp($breakpoint-lg)
+  {
+    height: 69px;
+    color: rgb(0, 0, 255); // JS LISTENER
+  }
+}
+
+.footer-social-catch
+{
+  @include bp($breakpoint-md)
+  {
+    height: 139px;
+  }
+  @include bp($breakpoint-lg)
+  {
+    height: 69px;
+  }
+}

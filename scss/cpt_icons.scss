@@ -1,0 +1,194 @@
+@import 'partials/global/variables';
+@import 'partials/global/retina-sprites';
+
+#menu-posts-video .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(videos-gray);
+}
+#menu-posts-video:hover .wp-menu-image::before,
+#menu-posts-video.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(videos);
+}
+
+#menu-posts-question .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(questions-gray);
+}
+#menu-posts-question:hover .wp-menu-image::before,
+#menu-posts-question.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(questions);
+}
+
+#menu-posts-recipes .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(recipes-gray);
+}
+#menu-posts-recipes:hover .wp-menu-image::before,
+#menu-posts-recipes.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(recipes);
+}
+
+#menu-posts-crisis .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(crisis-gray);
+}
+#menu-posts-crisis:hover .wp-menu-image::before,
+#menu-posts-crisis.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(crisis);
+}
+
+#menu-media .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(media-gray);
+}
+#menu-media:hover .wp-menu-image::before,
+#menu-media.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(media);
+}
+
+#menu-posts-media_asset .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(media-assets-gray);
+}
+#menu-posts-media_asset:hover .wp-menu-image::before,
+#menu-posts-media_asset.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(media-assets);
+}
+
+#menu-posts-newsletter .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(newsletters-gray);
+}
+#menu-posts-newsletter:hover .wp-menu-image::before,
+#menu-posts-newsletter.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(newsletters);
+}
+
+#menu-posts-people .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(people-gray);
+}
+#menu-posts-people:hover .wp-menu-image::before,
+#menu-posts-people.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(people);
+}
+
+#menu-posts-press_release .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(press-releases-gray);
+}
+#menu-posts-press_release:hover .wp-menu-image::before,
+#menu-posts-press_release.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(press-releases);
+}
+
+#menu-posts-product .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(products-gray);
+}
+#menu-posts-product:hover .wp-menu-image::before,
+#menu-posts-product.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(products);
+}
+
+#menu-posts-career .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(careers-gray);
+}
+#menu-posts-career:hover .wp-menu-image::before,
+#menu-posts-career.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(careers);
+}
+
+#menu-posts-pos .wp-menu-image::before
+{
+  content:'' !important;
+  transition:none;
+  -webkit-transition:none;
+  padding:0;
+  top:9px;
+  position:relative;
+  @include retina-sprite(point-of-sale-gray);
+}
+#menu-posts-pos:hover .wp-menu-image::before,
+#menu-posts-pos.wp-has-current-submenu .wp-menu-image::before
+{
+  @include retina-sprite(point-of-sale);
+}

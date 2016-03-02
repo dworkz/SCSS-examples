@@ -1,0 +1,230 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+/* ==========================================================================
+   EMS TO REMS
+   ========================================================================== */
+   
+// Example:
+//
+// Default:
+// @include font-size(.6875);
+//
+// or if you need !important:
+// @include font-size(.6875, !important);
+//
+@mixin font-size( $decimal-size, $important: null ) {
+  $base-font-multiplier: 1;
+  @if $important { font-size: $decimal-size * $base-font-multiplier * 16px $important; font-size: $decimal-size * 1rem $important; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px; font-size: $decimal-size * 1rem; }
+}
+
+/* ==========================================================================
+   RETINA IMAGES
+   ========================================================================== */
+
+//Be sure to add .ir class to tag being replaced -- see helper-classes.scss
+// This is a deprecated mixin, replaced by global/_retina-sprites.scss, but it's a dependable backup if need-be
+@mixin image-2x($image, $image2x, $width, $height) {
+  background:image-url($image) no-repeat;
+  width: $width;
+  height: $height;
+  display: block;
+  text-indent: -9999px;
+  @media (min--moz-device-pixel-ratio: 1.25),
+         (-o-min-device-pixel-ratio: 1.25/1),
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (min-device-pixel-ratio: 1.25),
+         (min-resolution: 200dpi),
+         (min-resolution: 1.25dppx) {
+    /* on retina, use image that is scaled by 2 */
+    background-image:image-url($image2x);
+    background-size: $width $height;
+  }
+}
+
+// For background images without text replacement, etc
+@mixin image-2x-bg($image, $image2x, $width, $height) {
+  background:image-url($image) no-repeat;
+  @media (min--moz-device-pixel-ratio: 1.25),
+         (-o-min-device-pixel-ratio: 1.25/1),
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (min-device-pixel-ratio: 1.25),
+         (min-resolution: 200dpi),
+         (min-resolution: 1.25dppx) {
+    /* on retina, use image that is scaled by 2 */
+    background-image:image-url($image2x);
+    background-size: $width $height;
+  }
+}
+
+/* ==========================================================================
+   OPACITY
+   ========================================================================== */
+////////////////////////
+//
+//  Usage:
+//
+//    .article-heading {
+//      @include opacity(0.8);
+//    }
+//
+////////////////////////
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* ==========================================================================
+   TEXT OVERFLOW
+   ========================================================================== */
+////////////////////////
+//
+//  Usage:
+//  An easy way to truncate text with an ellipsis.
+//  Requires the element to be block or inline-block.
+//
+//    .text-truncate {
+//      @include text-truncate;
+//     }
+//
+////////////////////////
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   MARGIN RESET FOR MOBILE
+   ========================================================================== */
+
+@mixin reset-margins{
+  margin-left: -$grid-padding;
+  margin-right: -$grid-padding;
+  padding: 0 $grid-padding;
+}
+
+/* ==========================================================================
+   BUTTON COMPONENT
+   ========================================================================== */
+
+////////////////////////
+//
+//  Usage:
+//  Make sure to have a "btn--(red||white)" class to work in.
+//    .btn--red || .btn--white{
+//      @include main-btn($red || white); mixin is optimized to work with 2 main colors($red & white).
+//    }
+//
+////////////////////////
+
+  //Color&shadow
+  @mixin main-btn-varColor($txtColor, $shadowColor){
+    color: $txtColor;
+    @include box-shadow($shadowColor 0px 4px);
+  }
+
+  @mixin main-btn($color){
+    @include border-radius(30px);
+
+    padding: 12px 40px 12px 15px;
+    margin:10px 0px;
+
+    position: relative;
+    cursor: pointer;
+
+    background: $color;
+    font-family:'brandon-bld';
+
+    text-transform: uppercase;
+    @include font-size(.75);
+
+    @include transition-property(background-color);
+    @include transition-duration(.2s);
+
+    @if $color == $red {@include main-btn-varColor($txtColor: white, $shadowColor: #f19c9f);}
+    @else if $color == white {@include main-btn-varColor($txtColor: $gray--darker, $shadowColor: rgba($black, .3));}
+    @else if $color == $gray--inactive {@include main-btn-varColor($txtColor: white, $shadowColor: #d9d9d9);}
+}
+
+
+
+/* ==========================================================================
+   MAIN NAVIGATION COLOR MIXINS
+   ========================================================================== */
+
+@mixin nav-state--color--red {
+  background-color: $red;
+  > a {
+    color: $white;
+  }
+}
+
+@mixin nav-state--color--black {
+  background-color: $gray--darkest;
+  > a {
+    color: $white;
+  }
+}
+
+@mixin nav-state--color--white-black {
+  background-color: $white;
+  > a {
+    color: $gray--darkest;
+  }
+}
+
+@mixin nav-state--color--white-red {
+  background-color: $white;
+  > a {
+    color: $red;
+  }
+}
+
+/* ==========================================================================
+   FORM MIXINS
+   ========================================================================== */
+   
+@mixin placeholder-text-color($color) {
+  &::-webkit-input-placeholder {color: $color;}
+  &:-moz-placeholder {color: $color;}
+  &::-moz-placeholder {color: $color;}
+  &:-ms-input-placeholder {color: $color;}
+  &.placeholder { color: $color;}
+}
+
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+
+/* ==========================================================================
+   BREAKPOINT MIXINS
+   ========================================================================== */
+
+@mixin bp($media) {
+  @if ($disable-responsive == false) {
+
+    @include breakpoint($media) 
+    {
+      @content;
+    }
+
+  } @else if ($disable-responsive == true) {
+
+    @if (($media == $breakpoint-md) or ($media == $breakpoint-lg) or ($media == $breakpoint-xl)) {
+      @content;
+    }
+
+  }
+}

@@ -1,0 +1,1575 @@
+////////////////////////
+// Site Layout Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+// All box model properties go here
+////////////////////////
+
+
+
+.container{
+  @include container;
+}
+
+.carousel__menu__list-item{
+  float: left;
+  width: percentage(2/12);
+}
+
+.grid-3-3-1 
+{
+  @include bp($breakpoint-sm) 
+  {
+    @include span-columns(4,4);
+  }
+  
+  @include bp($breakpoint-md) 
+  {
+    @include span-columns(4,12);
+
+    &.second,
+    &:nth-child(2n)
+    {
+      @include remove-omega;
+    }
+    &.clear-second,
+    &:nth-child(2n+1)
+    {
+      clear:none;
+    }
+    &.third,
+    &:nth-child(3n)
+    {
+      @include omega;
+    }
+    &.clear-third,
+    &:nth-child(3n+1)
+    {
+      clear:both;
+    }
+  }
+  @include bp($breakpoint-lg) 
+  {
+    @include span-columns(4,12);
+
+    &.second,
+    &:nth-child(2n)
+    {
+      @include remove-omega;
+    }
+    &.clear-second,
+    &:nth-child(2n+1)
+    {
+      clear:none;
+    }
+    &.third,
+    &:nth-child(3n)
+    {
+      @include omega;
+    }
+    &.clear-third,
+    &:nth-child(3n+1)
+    {
+      clear:both;
+    }
+  }
+}
+
+.grid-3-2-1 
+{
+  @include bp($breakpoint-sm) 
+  {
+    @include span-columns(4,4);
+  }
+  
+  @include bp($breakpoint-md) 
+  {
+    @include remove-omega;
+    @include span-columns(4,8);
+
+    &.second,
+    &:nth-child(2n)
+    {
+      @include omega;
+    }
+    &.clear-second,
+    &:nth-child(2n+1)
+    {
+      clear:both;
+    }
+  }
+  @include bp($breakpoint-lg) 
+  {
+    @include span-columns(4,12);
+
+    &.second,
+    &:nth-child(2n)
+    {
+      @include remove-omega;
+    }
+    &.clear-second,
+    &:nth-child(2n+1)
+    {
+      clear:none;
+    }
+    &.third,
+    &:nth-child(3n)
+    {
+      @include omega;
+    }
+    &.clear-third,
+    &:nth-child(3n+1)
+    {
+      clear:both;
+    }
+  }
+}
+
+.grid-4-3-2
+{
+  @include bp($breakpoint-sm)
+  {
+    @include isolate-grid(6);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include isolate-grid(4,12);
+  }
+  @include bp($breakpoint-lg)
+  {
+    &:nth-child(3n+1) { clear: none; }
+    @include isolate-grid(3);
+  }
+}
+
+.grid-2-1-1
+{
+  @include bp($breakpoint-sm) 
+  {
+    //@include isolate-grid(4);
+    @include span-columns(4, 4);
+  }
+  @include bp($breakpoint-md)
+  {
+    //@include isolate-grid(4);
+    @include span-columns(8, 8);
+    //@include nth-omega(2n);
+    
+    // @include nth-omega(2n);
+    //&:nth-child(2n) { @include omega; }
+  }
+  @include bp($breakpoint-lg)
+  {
+    &:nth-child(2n+1) { clear: none; }
+   // @include isolate-grid(6);
+    @include span-columns(6, 12);
+    @include nth-omega(2n);
+    //&:nth-child(2n) { @include omega; } 
+  }
+}
+
+
+.cta-tile,
+.meet-our-people__item {
+  @extend .grid-4-3-2;
+}
+
+
+
+.col3-grid  //.submit-recipe__check-wrap
+{
+  img{width: 100%; padding-bottom: 20px;}
+
+  @include bp($breakpoint-md) {@include span-columns(4, 12);}
+  @include bp($breakpoint-lg) {@include span-columns(4, 12);}
+
+}
+
+
+.col-3-12-grid
+{
+  @include bp($breakpoint-md) 
+  {
+    @include span-columns(2,8);
+
+    .sidebar-right &
+    {
+      @include omega;
+    }
+  }
+  @include bp($breakpoint-lg) 
+  {
+    @include span-columns(4,12);
+  }
+}
+
+.col-9-12-grid
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(6 omega,8);
+    
+    .sidebar-right &
+    {
+      @include remove-omega;
+    }
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(8 omega,12);
+  }
+}
+
+// Responsive layout for sidebar-left modules
+.sidebar-left{
+  .col-4-2-3{
+    @include bp($breakpoint-sm) {
+      @include span-columns(4, 4);
+    }
+    @include bp($breakpoint-md){
+      @include span-columns(2, 8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(3, 12);
+    }
+  }
+  .col-4-6-9{
+    @include bp($breakpoint-sm) {
+      @include span-columns(4 omega, 4);
+    }
+    @include bp($breakpoint-md){
+      @include span-columns(6 omega, 8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(9 omega, 12);
+    }
+  }
+}
+.sidebar-right{
+  .col-4-2-3{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md){
+    @include span-columns(2 omega, 8);
+  }
+  @include bp($breakpoint-lg){
+    @include span-columns(3 omega, 12);
+  }
+}
+.col-4-6-9{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4, 4);
+  }
+  @include bp($breakpoint-md){
+    @include span-columns(6, 8);
+  }
+  @include bp($breakpoint-lg){
+    @include span-columns(9, 12);
+  }
+}
+}
+
+
+
+//Ask the chef grids
+.col-6-12-grid
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(6,12);
+  }
+}
+
+.col-6-12-grid--omega
+{
+  @extend .col-6-12-grid;
+  @include omega;
+  &.push{margin-top:15%;}
+}
+
+.bleed{
+  @include bleed(176px, right);
+  padding-right: 0;
+}
+
+
+
+.sel-recipes-grid__item {
+  @include bp($breakpoint-sm)
+  {
+    @include span-columns(2,4);
+    &:nth-child(2n) {
+      @include omega;
+    }
+  }
+  @include bp($breakpoint-md)
+  {
+    &:nth-child(2n) {
+      @include remove-omega;
+    }
+    @include span-columns(4,12);
+    &:nth-child(3n) {
+      @include omega;
+    }
+  }
+  @include bp($breakpoint-lg)
+  {
+    &:nth-child(3n) {
+      @include remove-omega;
+    }
+    @include span-columns(3,12);
+    &:nth-child(4n) {
+      @include omega;
+    }
+  }
+}
+
+
+//setting/removing omegas from videos grid.
+.sel-videos-grid .row{
+  @include bp($breakpoint-md) {
+    .hide_md{display: none;}
+    div + div  { //setting omega on 2nd child.
+    float: right;
+    margin: 0;
+    padding-bottom: 80px;
+    };
+  }
+
+  @include bp($breakpoint-lg) {
+    div + div { float:left; }
+    .hide_md{display: block;}
+
+  //omega(3n) + padding for ie8
+    div + div + div {
+      float: right;
+      margin: 0;
+      padding-bottom: 80px;
+    };
+  }
+} //ends sel-videos-grid .row
+
+.column--two-thirds
+{
+  @include span-columns(8,12);
+  @include squish(2,2);
+}
+
+
+//Panel card grid
+// .col5-grid{
+//   @include bp($breakpoint-lg)
+//   {
+//     @include span-columns(5,12);
+//   }
+// }
+// .col-4-9-grid
+// {
+//   @include bp($breakpoint-lg)
+//   {
+//     @include span-columns(3,9);
+//   }
+// }
+
+
+// .col-3-9-grid
+// {
+//   @include bp($breakpoint-lg)
+//   {
+//     @include span-columns(1,6);
+//     float:right;
+//     @include squish(1);
+//   }
+// }
+
+
+/* ==========================================================================
+   BLOCK ELEMENT LAYOUT SETUP
+   ========================================================================== */
+
+.nav--fixed-elements-wrap {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(8, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    margin-right:0;
+  }
+}
+
+// Site Header & Nav
+
+.header--mobile__inner {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(8 omega, 8);
+  }
+}
+
+.logo-wrap {
+  @include bp($breakpoint-sm) {
+    @include span-columns(1, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(2, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    width:auto;
+    margin:0;
+  }
+}
+
+.search-bar__wrap {
+  @include bp($breakpoint-sm) {
+    @include span-columns(1, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(4, 6);
+  }
+
+  @include bp($breakpoint-lg) {
+    @include span-columns(2 omega, 10);
+  }
+
+  &.active {
+    @include bp($breakpoint-lg) {
+      @include span-columns(2 omega, 10);
+    }
+  }
+
+
+}
+
+.search-bar {
+  @include bp($breakpoint-lg) {
+    width: auto;
+  }
+}
+
+.nav--main {
+
+  @include bp($breakpoint-sm) {
+    @include span-columns(4, 4);
+  }
+
+   @include bp($breakpoint-md) {
+    @include span-columns(8, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    @include span-columns(12,12);
+  }
+}
+
+// .nav--main__list {
+//   @include bp($breakpoint-lg) {
+//     @include span-columns(10, 10);
+//   }
+// }
+
+// body.corporate-site .nav--subnav__list
+.nav--subnav__list
+
+{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(9, 12);
+    @include squish(2, 1);
+  }
+}
+
+
+// .multi-line-subnav {
+//   .nav--subnav__list {
+//     @include bp($breakpoint-lg) {
+//       @include span-columns(9, 12);
+//       @include squish(2, 1);
+//     }
+
+//     .nav--subnav__menu-item {
+//       @include bp($breakpoint-lg) {
+//         @include isolate-grid(4);
+//       }
+//     }
+
+//   }
+// }
+
+.nav--main__menu-item__tmpl--products-landing,
+.multi-line-subnav {
+  .nav--subnav__list {
+    @include bp($breakpoint-lg) {
+      @include span-columns(9, 12);
+      @include squish(2, 1);
+    }
+
+    .nav--subnav__column {
+      @include bp($breakpoint-lg) {
+        @include span-columns(3, 9);
+        & + .nav--subnav__column + .nav--subnav__column {
+          @include omega;
+        }
+      }
+    }
+
+    .nav--subnav__menu-item {
+      @include bp($breakpoint-lg) {
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+
+
+// Hero
+.panel-card
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4 omega,8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(5 omega, 12);
+    @include prefix(7);
+  }
+}
+
+
+// Contact Us
+.contact-us-column
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4, 8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(5, 12);
+  }
+}
+
+
+
+.contact-us--left-col__wrapper
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4, 8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(4, 12);
+  }
+}
+
+.contact-us--mid-col__wrapper
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4 omega, 8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3, 12);
+  }
+}
+
+.contact-us--right-col__wrapper
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4 omega, 8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(5 omega, 12);
+  }
+}
+
+//Nutrition Info
+
+.nutrition-info__img__wrapper
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(2,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3,12);
+  }
+}
+.nutrition-info__copy__wrapper
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(6 omega,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(9 omega,12);
+  }
+}
+
+//Press and releases page.
+
+.press-release__year-select {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega,4);
+  }
+}
+
+.press-release__left-col{
+  @include bp($breakpoint-lg) {
+    @include span-columns(3,12);
+  }
+}
+.press-release__right-col{
+  @include bp($breakpoint-lg) {
+    @include span-columns(9 omega,12);
+  }
+}
+
+.press-release__right-col__text{
+  @include bp($breakpoint-lg) {
+    @include span-columns(8,9);
+
+  }
+}
+
+.press-release__right-col__icon{
+  @include bp($breakpoint-lg) {
+    @include span-columns(1 omega,9);
+  }
+}
+
+.press-release__year-btn {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega,4);
+  }
+}
+
+
+
+
+//Single Recipe Template
+.recipe__left-col {
+  @include bp($breakpoint-md) {
+    @include span-columns(2,8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(3,12);
+  }
+}
+
+.recipe__right-col {
+  @include bp($breakpoint-md) {
+    @include span-columns(6 omega,8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(9 omega,12);
+  }
+}
+
+
+.recipe__info {
+  @include bp($breakpoint-md) {
+    @include span-columns(6 omega,6);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(3, 9);
+  }
+}
+
+.recipe__category {
+  @include bp($breakpoint-md) {
+    @include span-columns(3,6);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(3, 9);
+  }
+}
+
+.recipe__share {
+  @include bp($breakpoint-md) {
+    @include span-columns(3 omega,6);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(3 omega, 9);
+  }
+}
+
+.recipe__ingredients,
+.recipe__directions {
+  @include bp($breakpoint-md) {
+    @include span-columns(6 omega,6);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(9 omega, 9);
+  }
+}
+
+
+
+//Recipe Reviews
+.recipe__reviews {
+}
+
+
+.recipe__review {
+  @include bp($breakpoint-md) {
+    @include span-columns(8, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(12, 12);
+  }
+}
+
+
+.recipe__review-block--meta {
+  @include bp($breakpoint-md) {
+    @include span-columns(3, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(3, 12);
+  }
+}
+
+
+.recipe__review-block--content {
+  @include bp($breakpoint-md) {
+    @include span-columns(5 omega, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(9 omega, 12);
+  }
+}
+
+.recipe__review-row--submit {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(8, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(12, 12);
+  }
+}
+
+.recipe__reviews__submit-review {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(8, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(9 omega, 12);
+    @include pre(3);
+  }
+}
+
+
+
+
+//certificates grids.
+.certificate__logo
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(3,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3,12);
+  }
+}
+
+.certificate__regions
+{
+  width:100%;
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(5 omega,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(9 omega,12);
+  }
+}
+
+
+//Crisis bar grids.
+.crisis-bar__divider-col{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4,4);
+  }
+
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(8,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(12,12);
+    @include prefix(1);
+  }
+}
+
+.crisis-bar__left-col{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4,4);
+  }
+
+  .crisis-bar__text{
+    @include span-columns(4,4);
+  }
+
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(8,8);
+
+    .crisis-bar__text{
+      @include span-columns(3,3);
+    }
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(4,12);
+
+    .crisis-bar__text{
+      @include span-columns(3 omega,4);
+    }
+  }
+}
+  
+.crisis-bar__right-col{
+  padding-top:20px;
+  @include bp($breakpoint-sm) {
+    @include span-columns(4,4);
+  }
+
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(8,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(8 omega,12);
+    padding-top:0px;
+  }
+  
+}
+
+.crisis-bar--btn__wrapper
+{
+  @include span-columns(12,12);
+  @include prefix(10);
+}
+
+//Videos
+.video__left-col
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(5,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(8 ,12);
+  }
+}
+
+.video__right-col
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(3 omega,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(4 omega,12);
+  }
+}
+
+.video__link--most-viewed
+{
+
+  @include bp($breakpoint-sm)
+  {
+    @include isolate-grid(2,4);
+  }
+  @include bp($breakpoint-md)
+  {
+    &:nth-child(2n + 1) { clear: none; }
+    @include isolate-grid(4,12);
+  }
+  @include bp($breakpoint-lg)
+  {
+    &:nth-child(3n + 1) { clear: none; }
+    @include isolate-grid(2,8);
+  }
+}
+
+//Careers
+.career--individual__description--header
+{
+    @include bp($breakpoint-md)
+  {
+    @include span-columns(3 ,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(4 ,12);
+  }
+}
+
+.career--individual__description--copy
+{
+    @include bp($breakpoint-md)
+  {
+    @include span-columns(5 omega,8);
+  }
+
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(8 omega,12);
+  }
+}
+
+.upload-resume__file--wrapper
+{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(10 omega,12);
+  }
+}
+
+.upload-resume__file--upload
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(6,12);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(5,12);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3,12);
+  }
+}
+
+.upload-resume__file
+{
+  @include span-columns(6 omega,12);
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(7 omega,12);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(9 omega,12);
+  }
+}
+
+//share bar.
+.share-icons__wrapper{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(6,12);
+  }
+}
+
+.share-text--grid{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(2,6);
+  }
+}
+
+.share-icons--grid{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(4 omega,6);
+  }
+}
+
+//ask the chef
+  .panel-card__form{
+     input[type=text]{
+      width:100%;
+     }
+  }
+
+
+//Cooking Types
+.cooking-type__left
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(6,12);
+  }
+}
+
+.cooking-type__right
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4 omega,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(6 omega,12);
+  }
+}
+
+//Prepare, Cook, Serve, Pray, Love
+.p-c-s__link
+{
+  @extend .grid-4-3-2;
+}
+
+//Where to Buy
+.where-to-buy__store__wrapper
+{
+  @extend .grid-4-3-2;
+}
+
+.video__thumbnail__wrapper
+{
+  @extend .grid-4-3-2;
+}
+
+//recipe flyout
+.recipe-flyout__button
+{
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(4,8);
+
+    &:nth-child(2n)
+    {
+      @include omega;
+    }
+    &:nth-child(2n+1)
+    {
+      clear:both;
+    }
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3,12);
+
+    &:nth-child(2n)
+    {
+      @include remove-omega;
+    }
+    &:nth-child(2n+1)
+    {
+      clear:none;
+    }
+    html.lt-ie9 &.fourth,
+    &:nth-child(4n)
+    {
+      @include omega;
+    }
+    html.lt-ie9 &.fifth,
+    &:nth-child(4n+1)
+    {
+      clear:both;
+    }
+  }
+}
+
+.recipe-flyout__button--wide
+{
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(6 omega,12);
+    &:first-child
+    {
+      @include remove-omega;
+    }
+  }
+}
+
+//Artichokes on Sale
+.deal__store
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(1,4);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(2,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(3,12);
+  }
+}
+
+.deal__headline,
+.deal__description,
+.sale__lead-in-copy,
+.sale__bottom-copy
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(3 omega,4);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(6 omega,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(9 omega,12);
+  }
+}
+
+// Digital Cookbooks
+.digital-cookbooks__grid-item
+{
+  @include bp($breakpoint-md)
+  {
+    @include isolate-grid(4,24);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include isolate-grid(3,24);
+  }
+}
+
+
+// 3 Panel Module 
+.three-panel {
+  .three-panel__panel{
+    position: relative;
+
+    @include bp($breakpoint-sm) {
+      float: none;
+      width: 100%;
+    }
+
+    @include bp($breakpoint-md) {
+      float: left;
+      width: percentage(4/12);
+    }
+
+    .three-panel__image{
+      width:100%;
+    }
+  }
+}
+
+
+// NEWSLETTERS
+.newsletter__item__title {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(4, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    @include span-columns(6, 12);
+  }
+}
+
+.newsletter__item__season {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(4 omega, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    @include span-columns(6 omega, 12);
+  }
+}
+
+// Site Map
+.sitemap__page__wrapper {
+  @extend .grid-3-2-1;
+}
+
+
+/*
+==================================================================
+                          SEARCH RESULTS                          
+==================================================================
+*/
+
+.search__result--recipes
+{
+  @extend .grid-4-3-2;
+}
+
+.search__result__image
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(2,4);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(2,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(2,12);
+  }
+}
+  
+.search__result__text--image
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(2 omega,4);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(6 omega,8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(10 omega,12);
+  }
+}
+
+/* ==========================================================================
+   PRODUCTS ISOTOPES STYLE GRID
+   ========================================================================== */
+.col-no-gutter-4-3-2{
+  display: block;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  @include bp($breakpoint-sm) {
+    width: 50%;
+  }  
+  @include bp($breakpoint-md) {
+    width: 33.33%;
+  }
+  @include bp($breakpoint-lg) {
+    width: 25%;
+  }
+}
+
+/*
+==================================================================
+                          MEDIA ASSETS                          
+==================================================================
+*/
+
+// .assets__row 
+// {
+//   @include span-columns(4 omega,4);
+// }
+
+.assets__row, 
+.assets-form__list-row,
+.assets-form__form-row,
+.assets__cta-row,
+ {
+  @include bp($breakpoint-sm) 
+  {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) 
+  {
+    @include span-columns(8 omega, 8);
+  }
+  @include bp($breakpoint-lg) 
+  {
+    @include span-columns(12 omega, 12);
+  }
+}
+
+.assets__list-item 
+{
+  @extend .grid-4-3-2;
+}
+
+.assets-form__list-item 
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(4, 8);
+  }
+
+  @include bp($breakpoint-lg) {
+    @include span-columns(8, 12);
+  }
+  &.assets-form__list-item--pos
+  {
+    @include bp($breakpoint-sm) {
+      @include span-columns(3, 4);
+    }
+    @include bp($breakpoint-md)
+    {
+      @include span-columns(3,8);
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include span-columns(7,12);
+    }
+  }
+}
+
+.assets-form__list-item__number
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md)
+  {
+    @include span-columns(2, 8);
+  }
+  @include bp($breakpoint-lg)
+  {
+    @include span-columns(2, 12);
+  }
+}
+
+.assets-form__list-item__cta 
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+
+  @include bp($breakpoint-md) {
+    @include span-columns(4 omega, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(4 omega, 12);
+  }
+  &.assets-form__list-item__cta--pos {
+    @include bp($breakpoint-md) {
+      @include span-columns(3 omega, 8);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(3 omega, 12);
+    }
+  }
+}
+
+.assets-form__label 
+{
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(4, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(4, 12);
+  }
+}
+
+.assets-form__input {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(4 omega, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(8 omega, 12);
+  }
+}
+
+// SUBMIT A RECIPE
+
+.submit-recipe__label {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(3, 8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(4, 12);
+  }
+}
+
+.submit-recipe__input--full {
+  @include bp($breakpoint-sm) {
+    @include span-columns(4 omega, 4);
+  }
+  @include bp($breakpoint-md) {
+    @include span-columns(5 omega,8);
+  }
+  @include bp($breakpoint-lg) {
+    @include span-columns(8 omega,12);
+  }
+
+  .file-upload {
+    @include bp($breakpoint-md) {
+      @include span-columns(3,8);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(3,12);
+    }
+  }
+
+  .file-status {
+    @include bp($breakpoint-md) {
+      @include span-columns(5 omega,8);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(9 omega,12);
+    }
+  }
+
+  .number-stepper__ui {
+    @include bp($breakpoint-sm) {
+      @include span-columns(4 omega, 4);
+    }
+    @include bp($breakpoint-md) {
+      @include span-columns(4 omega, 4);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(4,8);
+    }
+  }
+
+  .number-stepper__control {
+    @include bp($breakpoint-sm) {
+      @include span-columns(2, 4);
+    }
+    @include bp($breakpoint-md) {
+      @include span-columns(2, 4);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(2,8);
+    }
+  }
+
+  .number-stepper__control--last {
+    @include bp($breakpoint-sm) {
+      @include span-columns(2 omega, 4);
+    }
+    @include bp($breakpoint-md) {
+      @include span-columns(2 omega,4);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(2 omega,8);
+    }
+  }
+
+}
+
+.submit-recipe__check-wrap {
+  @extend .col3-grid;
+}
+
+
+.trade__pdf-button
+{
+  @extend .grid-4-3-2;
+  @include bp($breakpoint-md)
+  {
+    @include isolate-grid(3,12);
+  }
+}
+
+// WHERE TO BUY LANDING
+
+.where-to-buy-landing__link-button
+{
+  @extend .grid-3-3-1;
+ 
+}
+
+
+/* ==========================================================================
+   NEWS AND PRESS RELEASES
+   ========================================================================== */
+
+.news-container
+{
+  .news-date{
+    @include bp($breakpoint-sm){
+      @include span-columns(4 omega, 4);
+    }
+    @include bp($breakpoint-md){
+      @include span-columns(2 ,8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(3, 12);
+    }
+  }
+  .news-title{
+    @include bp($breakpoint-sm){
+      @include span-columns(3, 4);
+    }
+    @include bp($breakpoint-md){
+      @include span-columns(5, 8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(7, 12);
+    }
+  }
+  .news-toggle{
+    @include bp($breakpoint-sm){
+      @include span-columns(1 omega, 4);
+    }
+    @include bp($breakpoint-md){
+      @include span-columns(1 omega, 8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(2 omega, 12);
+    }
+  }
+  .panel-collapse{
+    .panel-body{
+      @include bp($breakpoint-sm){
+        @include span-columns(4 omega, 4);
+      }
+      @include bp($breakpoint-md){
+        @include span-columns(6 omega, 8);
+      }
+      @include bp($breakpoint-lg){
+        @include span-columns(9 omega, 12);
+      }
+    }
+  }
+}
+

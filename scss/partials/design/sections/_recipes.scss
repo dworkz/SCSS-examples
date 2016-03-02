@@ -1,0 +1,536 @@
+.recipe__wrapper {
+  margin-top:35px;
+}
+
+.recipe__title {
+  line-height:1.3em;
+}
+
+.recipe__heading {
+  margin-bottom: 45px;
+}
+
+.recipe__right-col__heading {
+  margin-bottom: 30px;
+}
+
+.recipe__image {
+  display: block;
+  margin: -1%;
+  width:102%;
+  //height:102%;
+  max-width:none;
+}
+
+.recipe__lead-in
+{
+  padding:1em 0;
+}
+
+.recipe__image__wrapper
+{
+  overflow:hidden;
+}
+
+.recipe__nutrition {
+  p {
+    @include font-size(.75);
+    line-height: 1.5;
+  }
+  @include bp($breakpoint-sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.recipe__nutrition__title {
+  margin-bottom: 15px;
+}
+
+.recipe__info {
+  // @include bp($breakpoint-sm) {
+  //   margin-bottom: 20px;
+  // }
+  // @include bp($breakpoint-md) {
+  //   margin-bottom: 40px;
+  // }
+}
+
+.recipe__info,
+.recipe__category,
+.recipe__share {
+  font-family: 'brandon-bld';
+  text-transform: uppercase;
+  @include bp($breakpoint-sm) {
+    margin-bottom: 40px;
+  }
+  @include bp($breakpoint-md) {
+    margin-bottom: 40px;
+  }
+}
+
+.recipe__info--item {
+  @include font-size(.8);
+
+  & + .recipe__info--item {
+    margin-top: 15px;
+  }
+}
+
+.recipe__info--print {
+  display: none;
+  position: relative;
+  max-width: 186px;
+  @include bp($breakpoint-md) {
+    display: block;
+  }
+  a {
+    @extend .btn;
+    @extend .btn--red;
+    &:hover {
+      img {
+        @include retina-sprite(print-black);
+      }
+    }
+    &:active {
+      img {
+        @include retina-sprite(print-white);
+      }
+    }
+  }
+  img { 
+    display: block;
+    position: absolute;
+    right: 20px;
+    @include box-sizing(border-box);
+    padding-left: 24px; /* Equal to width of new image */
+    @include retina-sprite(print-white);
+  }
+}
+
+.recipe__category__list,
+.recipe__share__list {
+  @include font-size(.8);
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.recipe__category__list-item,
+.recipe__share__list-item {
+  position: relative;
+  color: $red;
+  & + .recipe__category__list-item,
+  & + .recipe__share__list-item {
+    margin-top: 15px;
+  }
+}
+
+.recipe__share__list-icon,
+.recipe__category__list-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.recipe__share__list-text,
+.recipe__category__list-text {
+  display: inline-block;
+  padding-left: 36px;
+}
+
+.recipe__ingredients,
+.recipe__directions {
+  margin-top: 50px;
+  p {
+    @include font-size(1.1);
+  }
+}
+
+.recipe__ingredients
+{
+  p,
+  p+p,
+  br
+  {
+    margin-top:0 !important;
+  }
+}
+
+.recipe__ingredients__heading,
+.recipe__directions__heading {
+  margin-bottom: 30px;
+}
+
+
+.recipe__cta--video {
+  display: inline-block;
+  padding-right: 90px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  &:hover {
+    .recipe__cta--video__icon {
+      @include retina-sprite(plus--black);
+    }
+  }
+  &:active {
+    .recipe__cta--video__icon {
+      @include retina-sprite(plus--white);
+    }
+  }
+}
+
+.recipe__cta--video__icon {
+  position: absolute;
+  right: 20px;
+  top: 35%;
+}
+
+.single-recipes {
+  .footer-social-catch .footer__wrapper {
+    margin-top: 0;
+  }
+}
+
+.btn--red.recipe__btn:hover
+{
+  .rating .icon.star--white
+  {
+    @extend .icon.star--small--gray;
+  }
+  .rating.star-4 .icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white,
+  .rating.star-3 .icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white,
+  .rating.star-2 .icon.star--white+.icon.star--white+.icon.star--white,
+  .rating.star-1 .icon.star--white+.icon.star--white,
+  .rating.star-0 .icon.star--white
+  {
+    @extend .icon.star--small--gray;
+    @include opacity(.4);
+  }
+  &:active
+  {
+    .rating .icon.star--white
+    {
+      @include retina-sprite(small_recipe_star_empty);
+    }
+  }
+}
+
+
+
+
+// Recipe Reviews
+
+.recipe__reviews {
+  background: url('../img/backgrounds/marble-black.jpg') repeat;
+  color: $white;
+  padding: 80px 0 70px 0;
+  margin-top: 110px;
+  margin-bottom:-25px;
+}
+
+.recipe__reviews__cta--load-more {
+  @extend .clearfix;
+
+  .load-more__link {
+    border-top: 2px solid $white;
+    border-bottom: 2px solid $white;
+    @include font-size(1.625);
+  }
+
+}
+
+.recipe__review {
+  padding: 80px 0;
+
+  & + .recipe__review {
+    border-top: 1px solid $gray--dark;
+  }
+}
+
+.recipe__review-data-row {
+  margin-bottom: 4px;
+}
+
+.recipe__review-data--name,
+.recipe__review-data--date {
+  @include font-size(1);
+  text-transform: uppercase;
+}
+
+.recipe__review-data--location {
+  text-transform: uppercase;
+  @include font-size(.75);
+}
+
+.recipe__review-data--description {
+  @include font-size(1);
+  line-height: 1.5; 
+
+  p {
+    & + p {
+      margin-top: 10px;
+    }
+  }
+}
+
+.recipe__review-data--city + .recipe__review-data--state:before {
+  content:", ";
+}
+
+.recipe__review-row--submit {
+  text-align: right;
+  margin: 40px 0 100px 0;
+}
+
+
+.recipe__review__cta--submit {
+  .icon {
+    position: absolute;
+    right: 20px;
+    top: 35%;
+  }
+  &:hover
+  {
+    .plus--white
+    {
+      @include retina-sprite(plus--black);
+    }
+    .minus--white
+    {
+      @include retina-sprite(minus--black);
+    }
+  }
+}
+
+.recipe__reviews__submit-review {
+
+}
+
+
+
+// Recipe Review Plugin Important Overrides
+
+#wpcr_respond_1  {
+  p {
+    line-height: 1.5 !important; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+#wpcr_button_1, 
+#wpcr_button_1:link, 
+#wpcr_button_1:visited,
+#wpcr_submit_btn,
+#wpcr_submit_btn:hover {
+  @include box-sizing(border-box);
+  // max-width: 100%;
+  white-space: normal !important;
+  text-align: left!important;
+
+  border: 0!important;
+  color: inherit!important;
+  -webkit-border-radius: 30px !important;
+     -moz-border-radius: 30px !important;
+          border-radius: 30px !important;
+  min-width: 100px !important;
+  text-decoration: none !important;
+  // 5px 40px 5px 10px !important;
+  // padding: 10px 40px 10px 15px !important;
+  padding: 12px 40px 12px 15px!important;
+  background: $red !important;
+  text-shadow: none !important;
+
+  &:hover {
+    background-color:$white !important;
+    color:$gray--darker !important;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 4px !important;
+       -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 4px !important;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 4px !important;
+  }
+
+  &:active{
+    color:$white!important;
+    background-color: $gray--darker!important;
+    @include box-shadow(rgba(black, .3) 0px 4px);
+  }
+}
+
+#wpcr_submit_btn
+{
+  color:$white !important;
+}
+
+#wpcr_submit_btn,
+#wpcr_submit_btn:hover {
+  padding: 12px 40px 12px 15px !important;
+  display: inline-block !important;
+}
+
+#wpcr_commentform input[type="text"] {
+  font-family: 'brandon-bld' !important;
+}
+
+#wpcr_commentform input[type="text"],
+#wpcr_commentform textarea {
+  width: 100%!important;
+  margin-bottom: 10px!important;
+  @include box-sizing(border-box);
+  padding: 10px!important;
+}
+
+#wpcr_commentform #wpcr_postcomment {
+  text-transform: uppercase;
+  margin-bottom: 20px!important;
+}
+
+#wpcr_respond_1 .wpcr_rating,
+#wpcr_commentform .wpcr_rating {
+  margin-bottom: 10px!important;
+}
+
+#wpcr_respond_1 .wpcr_rating,
+#wpcr_respond_1 .status,
+#wpcr_commentform .status {
+  height: 22px!important;
+}
+
+#wpcr_commentform .sp_rating
+{
+  float:left;
+  margin-left:10px;
+  margin-top:-2px;
+  .icon.star--red
+  {
+    width:22px;
+    height:22px;
+  }
+  .base
+  {
+    display:none !important;
+  }
+}
+
+#wpcr_commentform .wpcr_rating
+{
+  padding: 10px !important;
+  height: 40px !important;
+}
+
+.wpcr_rating__label
+{
+  color:$gray--light;
+  float:left;
+  margin-right:5px;
+  &.wpcr_rating__label--no-sm
+  {
+    @include breakpoint($breakpoint-sm)
+    {
+      display:none;
+    }
+  }
+}
+
+#wpcr_commentform .status {
+  width: auto!important;
+}
+
+#wpcr_commentform .recipe__review-form__label-cell {
+  display: none!important;
+}
+
+#wpcr_check_confirm .form__checkbox {
+  margin-right: 10px!important;
+}
+
+#wpcr_check_confirm small {
+  margin-bottom: 10px!important;
+  display: block!important;
+}
+
+#wpcr_commentform .recipe__review__row--submit {
+  text-align: right!important;
+}
+
+#wpcr_commentform .sp_rating .icon,
+#wpcr_respond_1 .sp_rating .icon {
+  margin-right: 10px;
+}
+
+// Featured Recipe Sidebar Right
+
+.recipe__featured__title {
+  margin-bottom: 10px;
+}
+
+.recipe__featured__description {
+  margin-bottom: 10px;
+}
+
+// Recipe share bar
+.recipe__landing__share__links {
+  background-image: url("../img/backgrounds/share-wood-texture.jpg");
+  width: 100%;
+  height: 62px;
+  border-bottom: 7px solid #000000;
+  padding: 20px 30px;
+  margin-bottom:70px;
+  position:relative;
+  z-index:4;
+  @include bp($breakpoint-sm)
+  {
+    padding:20px 12px;
+  }
+}
+
+.recipe__landing__share__links ul
+{
+  display: inline-block;
+
+  li {
+    float:left;
+    margin-left: 30px;
+
+    @include bp($breakpoint-sm)
+    {
+      margin-left: 22px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 0.875em;
+      color: #ffffff;
+    }
+  }
+
+  li.first__share__link {
+    margin-left: 0px;
+
+    h3 {
+
+      color: #ffffff;
+       @include bp($breakpoint-sm){
+        display: none;
+      }
+    }
+
+    h3.share__title__mobile {
+      display:none;
+      @include bp($breakpoint-sm){
+        display: block;
+      }
+    }
+  }
+
+  .icon.arrow-down-sm-white {
+    margin-left: 10px;
+  }
+}
+
+.recipe__directions br
+{
+  display:none;
+}

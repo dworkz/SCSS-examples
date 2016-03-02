@@ -1,0 +1,85 @@
+.wysiwyg {
+  .module-container & {
+    h1, h2, h3, h4, h5 {
+      margin-bottom: auto;
+    }
+  }
+  
+  ol+h1, ul+h1, p+h1, img+h1, div+h1,
+  ol+h2, ul+h2, p+h2, img+h2, div+h2,
+  ol+h3, ul+h3, p+h3, img+h3, div+h3,
+  ol+h4, ul+h4, p+h4, img+h4, div+h4,
+  ol+h5, ul+h5, p+h5, img+h5, div+h5
+  {
+    margin-top:40px;
+  }
+  
+  h1 + p, h1 + ul, h1 + ol, h1 + div, h1 + img, 
+  h2 + p, h2 + ul, h2 + ol, h2 + div, h2 + img, 
+  h3 + p, h3 + ul, h3 + ol, h3 + div, h3 + img, 
+  h4 + p, h4 + ul, h4 + ol, h4 + div, h4 + img, 
+  h5 + p, h5 + ul, h5 + ol, h5 + div, h5 + img, 
+  h6 + p, h6 + ul, h6 + ol, h6 + div, h6 + img{
+    margin-top: 10px;
+  }
+  p + ul,
+  p + ol,
+  ul + p,
+  ol + p,
+  ul + ul,
+  ol + ol,
+  ul + ol,
+  ol + ul {
+    margin-top: 20px;
+  }
+  li + li {
+    margin-top: 10px;
+  }
+  li {
+    list-style-position: inside;
+    text-indent: -16px;
+  }
+  ul {
+    padding: 0 0 0 20px;
+    li {
+      list-style-type: disc;
+      ul {
+        margin: 10px 0;
+        li {
+          list-style-type: circle;
+        }
+      }
+    }
+  }
+  ol {
+    padding: 0 0 0 20px;
+    li {
+      list-style-type: decimal;
+      ol {
+        margin: 10px 0;
+        li {
+          list-style-type: lower-alpha;
+        }
+      }
+    }
+  }
+  strong {
+    font-family: 'apercu-bld';
+    font-weight: normal;
+    em {
+      font-family: 'apercu-bld-ital';
+      font-weight: normal;
+    }
+  }
+  em {
+    font-family: 'apercu-ital';
+    font-weight: normal;
+    strong {
+      font-family: 'apercu-bld-ital';
+      font-weight: normal;
+    }
+  }
+  br {
+    margin-top: 1.3em;
+  }
+}

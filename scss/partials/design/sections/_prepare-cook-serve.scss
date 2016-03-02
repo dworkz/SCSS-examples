@@ -1,0 +1,46 @@
+.p-c-s__header
+{
+  margin-top:70px;
+}
+
+.p-c-s__amateurs__wrapper
+{
+  @extend .marble--gray;
+  padding:55px 0 35px;
+  margin-top:35px;
+}
+
+.p-c-s__experts__wrapper
+{
+  @extend .marble--black;
+  color:$white;
+  padding:55px 0 35px;
+}
+
+.p-c-s__more-ways__wrapper
+{
+  @extend .tile-pattern;
+  padding:55px 0 35px;
+  margin-bottom:-35px;
+}
+
+.p-c-s__amateurs__copy,
+.p-c-s__experts__copy,
+.p-c-s__more-ways__copy
+{
+  margin-bottom:35px;
+}
+
+.p-c-s__link
+{
+  margin-bottom:30px;
+  text-decoration:none;
+}
+
+.p-c-s__label
+{
+  font-family:'brandon-bld';
+  color:$red;
+  text-transform:uppercase;
+  margin-top:8px;
+}

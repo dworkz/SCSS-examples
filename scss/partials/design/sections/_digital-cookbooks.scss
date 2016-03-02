@@ -1,0 +1,136 @@
+.digital-cookbooks
+{
+  background-image: url("../img/backgrounds/marble-black.jpg");
+  padding-top:70px;
+  @include bp($breakpoint-sm)
+  {
+    padding-bottom:50px;
+  }
+}
+
+.digital-cookbooks__grid
+{
+  position: relative;
+  overflow: hidden;
+  width:100%;
+  margin-top:35px;
+  @include bp($breakpoint-sm)
+  {
+    margin-top:0;
+  }
+}
+
+.digital-cookbooks__buttons
+{
+  button.disabled
+  {
+    @include opacity(.4);
+  }
+  display:none;
+  @include bp($breakpoint-md)
+  {
+    display:block;
+    margin-right:1.3%;
+    margin-top:-5px;
+  }
+  @include bp($breakpoint-lg)
+  {
+    margin-right:1.2%;
+  }
+}
+
+.digital-cookbooks__grid--inner
+{
+  width:100%;
+  @include bp($breakpoint-md)
+  {
+    margin-left:0;
+    @include transition-property(margin-left);
+    @include transition-duration(.3s);
+    width:200%;
+  }
+  &.offset-1
+  {
+    @include bp($breakpoint-md)
+    {
+      margin-left:-33.5%;
+    }
+    @include bp($breakpoint-lg)
+    {
+      margin-left:-25.25%;
+    }
+  }
+  &.offset-2
+  {
+    @include bp($breakpoint-md)
+    {
+      margin-left:-67%;
+    }
+    @include bp($breakpoint-lg)
+    {
+      margin-left:-50.5%;
+    }
+  }
+  &.offset-3
+  {
+    @include bp($breakpoint-md)
+    {
+      margin-left:-101%;
+    }
+    @include bp($breakpoint-lg)
+    {
+      margin-left:-50.5%;
+    }
+  }
+}
+
+.digital-cookbooks__image
+{
+  overflow:hidden;
+  margin-bottom:15px;
+  @include bp($breakpoint-sm)
+  {
+    height:150px;
+    img
+    {
+      width:100%;
+      max-width:none;
+    }
+  }
+  @include bp($breakpoint-md)
+  {
+    height:120px;
+  }
+  img
+  {
+    margin-top:-50%;
+  }
+}
+
+.digital-cookbooks__grid-item
+{
+  display:block;
+  text-decoration:none;
+  font-family:'brandon-bld';
+  color:$white;
+  @include bp($breakpoint-sm)
+  {
+    width:100%;
+    float:none;
+    margin:0 0 25px;
+  }
+}
+
+.digital-cookbooks__text--headline
+{
+  color:$white;
+  @include font-size(1);
+  text-transform:uppercase;
+}
+
+.digital-cookbooks__text--copy
+{
+  color:$gray;
+  font-family:'apercu';
+  @include font-size(.8);
+}

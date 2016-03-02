@@ -1,0 +1,46 @@
+.modal__overlay
+{
+  background:rgba(0,0,0,.6);
+  min-width:100%;
+  min-height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:98;
+  display:none;
+}
+
+.modal__container--outer
+{
+  position:absolute;
+  display:none;
+  top:50%;
+  left:50%;
+  width:100%;
+  z-index:99;
+
+  @include bp($breakpoint-lg)
+  {
+    margin-left:-480px;
+  }
+}
+
+.modal__container
+{
+  @extend .marble_bg;
+  min-height:200px;
+  @extend .column--two-thirds;
+  position:relative;
+}
+
+.modal__close
+{
+  position:absolute;
+  top:0;
+  right:0;
+  cursor:pointer;
+  background:$red;
+  color:$white;
+  font-family:'brandon-bld';
+  text-transform:upper;
+}

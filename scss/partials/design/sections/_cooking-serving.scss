@@ -1,0 +1,262 @@
+.cooking-type_top-panel {
+  //min-height: 765px;
+  @extend .marble--black;
+  color: $white;
+
+  .divider {
+    border-color: $white;
+  } 
+
+  .grid-construct {
+    padding-top:35px;
+  }
+
+  .cooking-type_top-wrapper {
+    margin-top: 30px;
+
+    @include bp($breakpoint-sm)
+    {
+      @include span-columns(4, 4);
+      @include squish(0,0); 
+    }
+    @include bp($breakpoint-md)
+    {
+      @include span-columns(8, 8, 2.5em);
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include span-columns(8, 12, $grid-padding);
+      @include squish(2,2); 
+    }
+
+  }
+
+  .cooking-type__select__wrapper 
+  {
+
+    @include bp($breakpoint-sm)
+    {
+      @include span-columns(4,4);
+    }
+    @include bp($breakpoint-md)
+    {
+      @include span-columns(6,8);
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include span-columns(6,8);
+      @include post(4);
+    }
+
+  }
+
+  .cooking-type__video__wrapper {
+    @include bp($breakpoint-sm)
+    {
+      margin-bottom: 20px
+    }
+    @include bp($breakpoint-md)
+    {
+      margin-bottom: 35px
+    }
+    @include bp($breakpoint-lg)
+    {
+      margin-bottom: 30px
+    }
+  }
+
+  .cooking-type__sharing
+  {
+    background: none;
+    border: none;
+    height: auto;
+    
+    @extend .recipe__landing__share__links;
+    ul {
+      width: 100%;
+    }
+
+    @include breakpoint($breakpoint-sm)
+    {
+      padding: 0px 9px;
+      margin-top: 0px;
+      margin-bottom: 15px;
+      
+      ul li {
+        margin-left: 0px;
+        margin-right: 2em;
+      }
+
+      ul li.first__share__link {
+        float: none;
+        margin-bottom: 15px;
+        h3 {display:block;}
+      }
+
+      ul li.last__share__link {
+        margin-top: 2px;
+        margin-right: 0px;
+      }
+    }
+    
+    @include breakpoint($breakpoint-md) {
+      padding: 0px 0px;
+      margin-top: 0px;
+      margin-bottom: 15px;
+      
+      ul li {
+        margin-left: 26px;
+      }
+
+      ul li.first__share__link {
+        max-width: 138px;
+
+      }
+     
+    }
+
+    @include breakpoint($breakpoint-lg) 
+    {
+      margin-bottom: 45px;
+      border-bottom: 0;
+      ul li.first__share__link {
+        max-width: 138px;
+      }
+
+    }
+
+    .share-fb 
+    {
+      @include retina-sprite(social-fb-small--white);
+      @include breakpoint($breakpoint-sm)
+      {
+        @include retina-sprite(social-fb-big--white);
+      }
+    }
+
+    .share-tw 
+    {
+      @include retina-sprite(social-twitter-small--white);
+      @include breakpoint($breakpoint-sm)
+      {
+        @include retina-sprite(social-twitter-big--white);
+        margin-top: 3px;
+      }
+    }
+
+    .share-pin 
+    {
+      @include retina-sprite(social-pinterest-small--white);
+      @include breakpoint($breakpoint-sm)
+      {
+        @include retina-sprite(social-pinterest-big--white);
+        margin-top: 2px;
+      }
+    }  
+
+    .share-em 
+    {
+      @include retina-sprite(social-email-small--white);
+      @include breakpoint($breakpoint-sm)
+      {
+        @include retina-sprite(social-email-big--white);
+        margin-top: 4px;
+      }
+    }
+
+  }
+
+  .cooking-type__sharing__buttons
+  {
+    display:inline-block;
+    vertical-align:middle;
+    text-align:left;
+  }
+
+}
+
+.cooking-type_body {
+  
+  padding-bottom: 135px;
+
+  @include bp($breakpoint-sm)
+  {
+    padding-top: 25px; 
+  }
+  @include bp($breakpoint-md)
+  {
+    padding-top: 40px; 
+  }
+  @include bp($breakpoint-lg)
+  {
+     padding-top: 55px; 
+  }
+
+  .cooking-type_body-container {
+    @include bp($breakpoint-sm)
+    {
+       @include span-columns(4,4);
+    }
+    @include bp($breakpoint-md)
+    {
+      @include span-columns(12,12);
+      &:nth-child(2n) { 
+        @include span-columns(9);
+        @include omega; 
+      } 
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include span-columns(12,12);
+      &:nth-child(2n) 
+      { 
+        @include span-columns(9);
+        @include omega; 
+      } 
+    }
+  }
+
+
+  .cooking-type__images-wrapper { 
+    @include bp($breakpoint-sm)
+    {
+
+    }
+    @include bp($breakpoint-md)
+    {
+      @include span-columns(3);
+    }
+    @include bp($breakpoint-lg)
+    {
+      @include span-columns(3);
+    }
+  }
+
+
+
+  .cooking-type__image__wrapper
+  {
+    margin-bottom:35px;
+  }
+
+  .cooking-type__image
+  {
+    width:100%;
+  }
+
+}
+
+
+.cooking-type__video__wrapper
+{
+  margin-top:20px;
+  overflow:hidden;
+}
+
+.cooking-type__video__image
+{
+  width:100%;
+  margin-top:-9%;
+  margin-bottom:-9%;
+}
+

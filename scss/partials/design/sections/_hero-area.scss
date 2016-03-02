@@ -1,0 +1,695 @@
+////////////////////////
+// Hero Area
+////////////////////////
+
+/*
+ $THE HERO IMAGE
+ */
+
+.hero
+{
+  body.home.corporate-site.has-crisis &
+  {
+    top:0;
+  }
+  @include bp($breakpoint-lg)
+  {
+    body.home.corporate-site &
+    {
+      top:72px;
+    }
+  }
+}
+
+.carousel--hero{
+  overflow: hidden; //hides scroll-bar on sm&md
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  body.home.corporate-site &
+  {
+    @include bp($breakpoint-md) {
+      margin-bottom:-50px;
+    }
+    @include bp($breakpoint-lg)
+    {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.panel-cards
+{
+  position:relative;
+  width:100%;
+  @include bp($breakpoint-md)
+  {
+    position: absolute;
+    top:0;
+    .grid-construct
+    {
+      position:relative;
+    }
+  }
+}
+
+.carousel .panel-card__wrap
+{
+  position:relative;
+  top: 0;
+  width: 100%;
+  z-index:2;
+  &.current
+  {
+    z-index:3;
+  }
+  @extend .marble--black;
+  @include bp($breakpoint-sm)
+  {
+    display:none;
+    &.current
+    {
+      display:block;
+    }
+  }
+  @include bp($breakpoint-md)
+  {
+    background:transparent;
+    position: absolute;
+  }
+}
+
+
+.panel-card--index
+{
+  right: 0;
+  @include bp($breakpoint-sm)
+  {
+    padding-top:20px;
+    padding-bottom:30px;
+    margin-top:0;
+    background:transparent;
+    color:$white;
+    visibility:visible;
+  }
+  &.recipe-landing
+  {
+    margin-top:60px;
+    padding-bottom:30px;
+    @include bp($breakpoint-sm)
+    {
+      margin-top:0;
+    }
+  }
+  @include bp($breakpoint-md)
+  {
+    visibility:hidden;
+    .panel-card__wrap.current &
+    {
+      visibility:visible;
+      top: 0;
+      z-index: 900;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: translate3d(0,0,0);
+      -webkit-backface-visibility: hidden;
+
+      -moz-transform: rotateX(0deg) rotateY(0deg);
+      -moz-transform-style: preserve-3d;
+      -moz-transform: translate3d(0,0,0);
+      -moz-backface-visibility: hidden;
+
+      transform: rotateX(0deg) rotateY(0deg);
+      transform-style: preserve-3d;
+      transform: translate3d(0,0,0);
+
+      -webkit-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      -ms-transition: all 0s ease-in-out;
+    }
+    .panel-card__wrap.current.flip &
+    {
+      visibility:hidden;
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+    }
+    .panel-card__wrap.next &
+    {
+      visibility:hidden;
+      z-index: 800;
+      -webkit-transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      -moz-transform: rotateY(-180deg);
+      -moz-transform-style: preserve-3d;
+      -moz-backface-visibility: hidden;
+
+      -o-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      -ms-transition: all 0s ease-in-out;
+    }
+    .panel-card__wrap.next.flip &
+    {
+      z-index: 1000;
+      visibility:visible;
+      -webkit-transform: rotateX(0deg) rotateY(0deg);
+      -moz-transform: rotateX(0deg) rotateY(0deg);
+    }
+  }
+}
+
+.panel-card__headline
+{ 
+  @include bp($breakpoint-sm)
+  {
+    //@extend .gamma can't be used so...
+    @include font-size(1);
+    line-height: 1.25em;
+  }
+}
+
+
+.carousel--slider {
+  &.placeholder
+  {
+    position:relative;
+    display:block;
+    @include opacity(0);
+  }
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  top:0;
+  width:100%;
+  @include bp($breakpoint-md)
+  {
+    max-height: 551px;
+  }
+  body.home &
+  {
+    margin-top:0;
+    @include bp($breakpoint-sm)
+    {
+      margin-top: -62px;
+    }
+  }
+
+  &.current {
+    display: block;
+  }
+
+  .btn {
+    @include bp($breakpoint-sm) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.carousel--inner {
+  position: relative;
+  overflow: hidden;
+  img
+  {
+    @include bp($breakpoint-md)
+    {
+      width:100%;
+      margin-left:0;
+      max-width:100%;
+      height:auto;
+      margin-top:-20%;
+    }
+  }
+}
+
+.recipe__btn
+{
+  padding: 5px 25px;
+  .rating
+  {
+    margin-bottom:0;
+  }
+  &:hover
+  {
+    .icon.star--white
+    {
+      @extend .icon.star--small--gray;
+    }
+  }
+}
+
+.carousel--hero+.module-container
+{
+  z-index: 5;
+  position: relative;
+  body.artichoke-site &
+  {
+    @include bp($breakpoint-sm)
+    {
+      margin-top:70px;
+    }
+  }
+}
+
+/*
+$CAROUSEL BUTTONS
+*/
+
+.carousel__menu__wrap {
+  position: relative;
+  width:100%;
+  @include bp($breakpoint-sm)
+  {
+    position:absolute;
+    top:0;
+  }
+  @include bp($breakpoint-md)
+  {
+    top:-50px;
+  }
+  @include bp($breakpoint-lg) {
+    @include container;
+  }
+}
+
+//color setter for the carousel--menu__item
+.carousel__menu
+{ 
+  // display: none;
+  position: relative;
+  z-index: 20;
+  top: 25px;
+
+  @include bp($breakpoint-md)
+  {
+    display: block;  //takes 100% width
+    width: 100%;
+    top: 0;
+  }
+  @include bp($breakpoint-lg)
+  {
+    max-width: 960px;
+  } 
+  
+  // Looping through Carousel Control divs by ID# and applying increasingly-low opacities
+  $var : 0%;
+  @for $i from 0 through 5 
+  {
+    .carousel--menu__child--#{($i+1)}
+    {  
+      background-color: lighten($gray--darker,$var);
+      .carousel__menu__hero-indicator
+      {
+        border-bottom-color: lighten(#27251D,($var/2));
+      }
+    }
+    $var : $var + 10;
+  }
+
+  .carousel__menu__list 
+  {
+
+    @include bp($breakpoint-sm) {
+      margin-left: 20px;
+    }
+
+    // @include bp($breakpoint-sm) {
+    //   position: absolute;
+    // }
+
+    margin:0 auto;
+    li
+    { 
+      // @include bp($breakpoint-sm) {
+      //   width: 16px;
+      //   height: 16px;
+      //   @include border-radius(8px);
+      // }
+
+      @include bp($breakpoint-sm)
+      {
+        background: transparent !important;
+        width: 15px;
+        height: 15px;
+        border: 0 !important;
+        margin-right: 8px;
+      }
+      a
+      {
+        display:block;
+        width:100%;
+        height:100%;
+        padding:10px 20px 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'brandon-bld';
+        
+        @include bp($breakpoint-sm)
+        {
+          font-size: 0;
+          text-indent: -9999px;
+          height: 15px;
+          width: 15px;
+          border-radius: 10px;
+          border: 3px solid white;
+          padding: 0;
+          display: block;
+          background-color: $gray--darker;
+        }
+        @include bp($breakpoint-md)
+        {
+          padding:10px 10px 0;
+          @include font-size(.72);
+        }
+        @include bp($breakpoint-lg)
+        {
+          padding:10px 20px 0;
+          @include font-size(.8);
+        }
+      }
+    
+      &:hover
+      {
+        background: white;
+        border-bottom: 6px solid $red;
+        a
+        {
+          color:$gray--carousel;
+        }
+        .carousel__menu__hero-indicator
+        {
+          border-bottom-color:$white;
+        }
+      }
+      &:active,
+      &.current
+      {
+        border-bottom: 6px solid $red;
+        a
+        {
+          color:$white;
+          @include bp($breakpoint-sm) {
+            background-color: $red
+          }
+        }
+        .carousel__menu__hero-indicator
+        {
+          @include bp($breakpoint-sm) {
+            display: none;
+          }
+          display:block;
+        }
+      }
+      &:active:hover,
+      &.current:hover
+      {
+        a
+        {
+          color:$gray--darker;
+        }
+      }
+    }
+  }
+}
+
+.carousel__nav-arrows {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  z-index: 20;
+  @include bp($breakpoint-md) {
+    display: none;
+  }
+}
+
+.carousel__nav-arrows__arrow {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  text-align: center;
+  display: block;
+  float: left;
+  background-color: $white;
+
+  & + .carousel__nav-arrows__arrow {
+    margin-left: 2px;
+  }
+
+  &:active {
+    background-color: $gray--dark;
+
+    &.carousel__nav-arrows__arrow--left {
+      .icon {
+        @include retina-sprite(sidebar-arrow-left_hover)
+      }
+    }
+
+    &.carousel__nav-arrows__arrow--right {
+      .icon {
+        @include retina-sprite(sidebar-arrow-right_hover)
+      }
+    }
+  }
+  
+  .icon {
+    display: inline-block;
+    margin-top: 38%;
+  }
+}
+
+
+
+.carousel__menu__child 
+{
+  padding: 0;
+  border-bottom: 6px solid $gray--dark;
+  color:white; 
+  background-image: url('../img/backgrounds/carousel-wood-texture.png');
+  position: relative;
+  height:100px;
+  text-transform: uppercase;
+  font-weight: normal;
+  @include font-size(.8); /* 13px */
+  line-height: 1.375em;
+}
+.carousel__menu__hero-indicator
+{
+  width: 0; 
+  height: 0; 
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid $gray--carousel;
+  position:absolute;
+  top:-16px;
+  left:50%;
+  margin-left:-15px;
+  display:none;
+  @include bp($breakpoint-sm) {
+    display: none;
+  }
+}
+
+
+
+
+.page-title--hero{
+  position: absolute;
+  color: $white;
+  z-index: 2;
+  margin-top:70px;
+  @include bp($breakpoint-sm)
+  {
+    margin-top:0;
+  }
+
+  h1{
+      @include single-text-shadow(0,0,20px,20px,$gray--darker);
+      @include bp($breakpoint-sm) 
+      {
+        font-size: 1.8em;
+      } 
+  }
+}
+
+.hero .page-title--hero {
+  @include bp($breakpoint-sm)
+  {
+    top: 50px;
+  }
+  @include bp($breakpoint-md)
+  {
+    max-width:50%;
+  }
+  @include bp($breakpoint-lg)
+  {
+    max-width:none;
+  }
+}
+
+.page-title--plain{
+  margin-top:70px;
+  padding-bottom:70px;
+}
+
+.asparagus-nav__wrapper+div,
+.asparagus-nav__wrapper+section
+{
+  margin-top:70px;
+}
+
+.asparagus-nav__wrapper.affix+section,
+.asparagus-nav__wrapper.affix+div
+{
+  margin-top:138px;
+}
+
+.asparagus-nav__wrapper+div+div,
+.asparagus-nav__wrapper+div+section
+.asparagus-nav__wrapper+section+section
+.asparagus-nav__wrapper+section+div
+{
+  margin-top:0;
+}
+
+
+.asparagus-nav__wrapper{
+  min-height: 68px;
+  width: 100%;
+  display:none;
+  z-index : $zindex-navbar - 100;
+  position: relative;
+  @include bp($breakpoint-md)
+  {
+    display:block;
+    width: 100%;
+    &.fixed{
+      position: fixed;
+    }
+    &.affix{
+      position: fixed;
+      top: 60px;
+    }
+  }
+  @include bp($breakpoint-lg)
+  {
+    &.affix
+    {
+      top:88px;
+    }
+  }
+  .asparagus-nav__content{
+
+    ul{
+      overflow: auto;
+      li{ 
+        float: left;
+        display:table;
+        background-image: url('../img/backgrounds/carousel-wood-texture.png');
+        text-align: center;
+        height:68px;
+        border-bottom: 6px solid darken($gray--darker,7%);
+        a{
+          display: table-cell;
+          vertical-align:middle;
+          color: white;
+          font-family: 'brandon-bld';
+          text-transform: uppercase;
+          text-decoration: none;
+          width: 100%;
+          padding: 0;
+          @include font-size(.8);
+        }
+        //set each second item to lighter color
+        @for $i from 0 through 8
+        {
+          @if $i % 2 == 0 { &.asparagus-nav__item--#{$i} {background-color: lighten($gray--darker,15%);};}
+          @else { &.asparagus-nav__item--#{$i} {background-color: lighten($gray--darker,5%);};}
+        }
+
+        &.active{
+          background-image: none;
+          background-color: $red;
+          border-bottom: 6px solid darken($red,17%);
+        }
+      }
+    }
+  }
+}
+
+body.admin-bar #wrap {
+  .hero--single {
+    @include bp($breakpoint-md) {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    top: 0px;
+    }
+
+      @include bp($breakpoint-sm) {
+        margin-bottom: 0px
+      }
+  }
+
+  .hero--single {
+    img.hero {
+      @include bp($breakpoint-sm) {
+        margin-bottom: 0px
+      }
+    }
+  }
+
+  .carousel--hero--single {
+    @include bp($breakpoint-md) {
+    padding-bottom: 0px;
+    margin-bottom:0;
+    }
+  }
+}
+
+.hero--single {
+  @include bp($breakpoint-md) {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    top: 0px;
+    }
+
+      @include bp($breakpoint-sm) {
+        margin-bottom: 0px
+      }
+}
+
+  .hero--single {
+    img.hero {
+      @include bp($breakpoint-sm) {
+        margin-bottom: 0px
+      }
+    }
+  }
+
+  .large-image-carousel__text--container {
+    @include breakpoint($breakpoint-sm) {
+      display: none;
+    }
+    position: absolute;
+    top: 65%;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    @include single-text-shadow(0,0,20px,20px,$gray--darker);
+
+    h3 {
+      color: $white;
+    }
+
+    .elements-box {
+      margin: 30px auto auto auto;
+      width: 70px;
+    }
+
+    .divider {
+      border-color: $white;
+    }
+  }

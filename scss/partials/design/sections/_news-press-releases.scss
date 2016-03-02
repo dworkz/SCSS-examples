@@ -1,0 +1,141 @@
+.press-release__grid{
+  margin-bottom: 60px;
+  .divider{
+    margin-top: 20px;
+  }
+}
+
+.press-release__main-content{
+  div{
+    margin-top:50px;
+  }
+}
+
+.press-release__year-btn
+{
+  @include font-size(1.3);
+}
+
+.press-release__year-select {
+  @extend .option__wrapper--inner; 
+  @extend .btn; 
+  @extend .btn--white;
+  z-index: 5;
+  display: none;
+  position: absolute;
+  margin: 12px 0 0 -15px;
+  min-width: 100px;
+}
+
+.divider--red
+{
+  width:30px;
+  border-color:$red;
+  margin-top:30px;
+}
+.news-container
+{
+  border-top: 1px solid #000;
+  margin-bottom:70px;
+  .panel
+  {
+    padding: 20px 0px;
+    border-bottom: 1px solid #000;
+    .panel-heading
+    {
+      .news-date{
+        margin-top: 12px;
+        margin-bottom: 15px;
+      }
+      a
+      {
+        text-decoration: none;
+        &:active
+        {
+          background-color: transparent;
+          color: #E2383F;
+        }
+        .news-title{
+        }
+        .news-toggle{
+          display: block;
+          text-align: right;
+          font-size: 2em;
+          .icon {
+            @include retina-sprite(minus--xl--red);
+          }
+        }
+
+        &.collapsed {
+          .news-toggle{
+            .icon {
+              @include retina-sprite(plus--xl--red);
+            }
+          }
+        }
+      }
+    }
+    .panel-collapse{
+      .panel-body{
+        margin-top: 40px;
+        h3 {
+          margin-bottom: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+.accordion-line{
+  display: none;
+}
+
+.press-release__right-col__icon{
+  .icon{
+    cursor: pointer;
+  }
+}
+
+.press-release__right-col__text{
+  h2{
+    color:$red;
+    line-height: 1.4em;  
+  }
+}
+
+.press-release__year-btn {
+  display: inline-block;
+  @include bp($breakpoint-sm) {
+    margin-bottom: 40px;
+  }
+  html.no-touch &:hover,
+  html.touch &.active {
+    .press-release__year-select {
+      display: block;
+    }
+  }
+}
+
+.press-release__subHead{
+  display: inline-block;
+}
+
+.press-release__subHead-btn{
+
+  @include bp($breakpoint-md) {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  @include bp($breakpoint-lg) {
+      // position: absolute;
+      // top:-10px;
+      // left:60%;
+
+      // .btn{
+      // @include font-size(1);  
+      // }
+  }
+
+}
+
+

@@ -1,0 +1,71 @@
+.crisis-bar{
+  background-color: $red;
+  color:white;
+  position:relative;
+}
+
+.crisis-bar__wrapper{
+  padding: 50px 40px 40px 70px;
+  width:100%;
+  @include bp($breakpoint-lg)
+  {
+    padding:50px 0 40px;
+  }
+}
+
+.crisis-bar__icon{
+  position: absolute;
+  top:70px;
+  left:20px;
+
+  @include bp($breakpoint-lg)
+  {
+    top:0;
+    left:0;
+  }
+}
+
+.crisis-bar__text
+{
+  line-height: 1em;
+}
+
+.crisis-bar--btn__wrapper
+{
+  @extend .close__btn__wrapper;
+}
+
+.crisis-bar__close-btn
+{
+  @extend .close__btn;
+}
+
+.crisis-bar__left-col
+{
+  @include bp($breakpoint-lg)
+  {
+    position: relative;
+  }
+}
+
+.crisis-bar__right-col{
+  p{
+    @include font-size(1.125);
+    
+    @include bp($breakpoint-md)
+      {
+      @include font-size(1.188);
+      line-height: 1.625em;
+    }
+  }
+
+  .btn{
+    font-family: 'brandon-bld';
+    @include font-size(.8);
+  }
+}
+
+.crisis__full__wrapper
+{
+  margin-top:70px;
+}

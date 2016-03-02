@@ -1,0 +1,731 @@
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+
+.icon {
+  display: inline-block; // So Compass can form icons from sprite -- try display: block; if problems arise
+}
+
+//header icons -nav
+.icon.search-glass {
+  @include retina-sprite(search-glass);
+}
+
+.icon.search-glass-white {
+  @include retina-sprite(search-glass-white);
+}
+
+.icon.search-glass-lg-white {
+  @include retina-sprite(search-glass-lg-white);
+}
+
+.icon.search-glass-lg-black {
+  @include retina-sprite(search-glass-lg-black);
+}
+
+.icon.hamburger-white {
+  @include retina-sprite(hamburger-white);
+}
+
+.icon.hamburger-black {
+  @include retina-sprite(hamburger-black);
+}
+
+.icon.selector__home--white {
+  @include retina-sprite(selector__home-site--white);
+}
+
+.icon.selector__home--red {
+  @include retina-sprite(selector__home-site--red);
+}
+
+.icon.selector__home--black {
+  @include retina-sprite(selector__home-site--black);
+}
+
+.icon.selector__artichoke--white {
+  @include retina-sprite(selector__artichoke-site--white);
+}
+
+.icon.selector__artichoke--white--small {
+  @include retina-sprite(selector__artichoke-site--white--small);
+}
+
+.icon.selector__artichoke--green {
+  @include retina-sprite(selector__artichoke-site--green);
+}
+
+.icon.selector__artichoke--black {
+  @include retina-sprite(selector__artichoke-site--black);
+}
+
+.icon.selector__artichoke--black--small {
+  @include retina-sprite(selector__artichoke-site--black--small);
+}
+
+
+//social icons - recipe page
+.icon.social-email-small--red {
+  @include retina-sprite(social-email-small--red);
+}
+
+.icon.social-email-large--red {
+  @include retina-sprite(social-email-large--red);
+}
+
+.icon.social-email-small--white {
+  @include retina-sprite(social-email-small--white);
+}
+
+.icon.social-email-big--white {
+  @include retina-sprite(social-email-big--white);
+}
+
+.icon.social-fb-small--red {
+  @include retina-sprite(social-fb-small--red);
+}
+
+.icon.social-fb-small--white {
+  @include retina-sprite(social-fb-small--white);
+}
+
+.icon.social-fb-big--white {
+  @include retina-sprite(social-fb-big--white);
+}
+
+.icon.social-twitter-small--red {
+  @include retina-sprite(social-twitter-small--red);
+}
+
+.icon.social-twitter-small--white {
+  @include retina-sprite(social-twitter-small--white);
+}
+
+.icon.social-twitter-big--white {
+  @include retina-sprite(social-twitter-big--white);
+}
+
+.icon.social-pinterest-small--red {
+  @include retina-sprite(social-pinterest-small--red);
+}
+
+.icon.social-pinterest-small--white {
+  @include retina-sprite(social-pinterest-small--white);
+}
+
+.icon.social-pinterest-big--white {
+  @include retina-sprite(social-pinterest-big--white);
+}
+
+.icon.social-more-small--red {
+  @include retina-sprite(social-more-small--red);
+}
+
+//social icons - footer
+.icon.yt {
+  @include retina-sprite(yt);
+}
+.icon.yt--red
+{
+  @include retina-sprite(yt--red);
+}
+
+.icon.fb {
+  @include retina-sprite(fb);
+}
+.icon.fb--red
+{
+  @include retina-sprite(fb--red);
+}
+
+.icon.pin {
+  @include retina-sprite(pin);
+}
+.icon.pin--red
+{
+  @include retina-sprite(pin--red);
+}
+
+.icon.twitter {
+  @include retina-sprite(twitter);
+}
+.icon.twitter--red
+{
+  @include retina-sprite(twitter--red);
+}
+
+.icon.in {
+  @include retina-sprite(in);
+}
+.icon.in--red {
+  @include retina-sprite(in--red);
+}
+
+.icon.share_email {
+  @include retina-sprite(share_email);
+}
+
+
+
+
+//arrow icons - buttons
+.icon.arrow-left
+{
+  @include retina-sprite(slider-left);
+  .nav--slider__btnPrev:hover &
+  {
+    @include retina-sprite(slider-left-hover);
+  }
+}
+
+.icon.arrow-right
+{
+  @include retina-sprite(slider-right);
+  .nav--slider__btnNext:hover &
+  {
+    @include retina-sprite(slider-right-hover);
+  }
+}
+
+.icon.cta-arrow {
+  @include retina-sprite(cta-arrow);
+}
+
+.icon.cta-arrow-dark {
+  @include retina-sprite(cta-arrow-dark);
+}
+
+.icon.cta-arrow-down-black {
+  @include retina-sprite(cta-arrow-down-black);
+}
+
+.icon.cta-arrow-up-black {
+  @include retina-sprite(cta-arrow-up-black);
+}
+
+.icon.cta-arrow-up-black--large {
+  @include retina-sprite(cta-arrow-up-black--large);
+}
+
+.icon.cta-arrow-up-white--large {
+  @include retina-sprite(cta-arrow-up-white--large);
+}
+
+.icon.cta-arrow--large--gray
+{
+  @include retina-sprite(cta-arrow--large--gray);
+}
+
+.icon.cta-arrow--large--red
+{
+  @include retina-sprite(cta-arrow--large--red);
+}
+
+.icon.cue-down-arrow--black 
+{
+  @include retina-sprite(cue-down-arrow--black);
+}
+
+.icon.arrow-down-gray
+{
+  @include retina-sprite(arrow-down-gray);
+}
+
+.icon.arrow-down-white
+{
+  @include retina-sprite(arrow-down-white);
+}
+
+.icon.arrow-down-sm-red
+{
+  @include retina-sprite(arrow-down-sm-red);
+}
+
+.icon.arrow-down-sm-white
+{
+  @include retina-sprite(arrow-down-sm-white);
+}
+
+
+// Reset CTA
+.icon.cta--reset--black {
+  @include retina-sprite(cta--reset--black);
+}
+
+.icon.cta--reset--brown {
+  @include retina-sprite(cta--reset--brown);
+}
+
+.icon.cta--reset--white {
+  @include retina-sprite(cta--reset--white);
+}
+
+
+//Video Play Button
+.icon.video-play
+{
+  @include retina-sprite(video-btn);
+  z-index:2;
+}
+
+//Sidebar Slider buttons
+.icon.sidebar-arrow-left
+{
+  @include retina-sprite(sidebar-arrow-left);
+  html.no-touch .left-btn:hover &
+  {
+    @include retina-sprite(sidebar-arrow-left_hover);
+  }
+  html.no-touch .left-btn.disabled:hover &
+  {
+      @include retina-sprite(sidebar-arrow-left);
+  }
+}
+
+.icon.sidebar-arrow-right
+{
+  @include retina-sprite(sidebar-arrow-right);
+  html.no-touch .right-btn:hover &
+  {
+    @include retina-sprite(sidebar-arrow-right_hover);
+  }
+  html.no-touch .right-btn.disabled:hover &
+  {
+      @include retina-sprite(sidebar-arrow-right);
+  }
+}
+
+.icon.pointer_down
+{
+  @include retina-sprite(pointer_down);
+}
+
+//recycle icons
+.icon.accordion-recycle-pete
+{
+  @include retina-sprite(pete);
+}
+
+.icon.accordion-recycle-hdpe
+{
+  @include retina-sprite(hdpe);
+}
+
+.icon.accordion-recycle-v
+{
+  @include retina-sprite(v);
+}
+
+.icon.accordion-recycle-ldpe
+{
+  @include retina-sprite(ldpe);
+}
+
+.icon.accordion-recycle-pp
+{
+  @include retina-sprite(pp);
+}
+
+.icon.accordion-recycle-ps
+{
+  @include retina-sprite(ps);
+}
+
+.icon.accordion-recycle-other
+{
+  @include retina-sprite(other);
+}
+
+.icon.accordion-recycle-pete-sm
+{
+  @include retina-sprite(pete-sm);
+}
+
+.icon.accordion-recycle-hdpe-sm
+{
+  @include retina-sprite(hdpe-sm);
+}
+
+.icon.accordion-recycle-v-sm
+{
+  @include retina-sprite(v-sm);
+}
+
+.icon.accordion-recycle-ldpe-sm
+{
+  @include retina-sprite(ldpe-sm);
+}
+
+.icon.accordion-recycle-pp-sm
+{
+  @include retina-sprite(pp-sm);
+}
+
+.icon.accordion-recycle-ps-sm
+{
+  @include retina-sprite(ps-sm);
+}
+
+.icon.accordion-recycle-other-sm
+{
+  @include retina-sprite(other-sm);
+}
+
+
+//Plus & Minus
+
+.icon.plus--white
+{
+  @include retina-sprite(plus--white);
+}
+
+.icon.plus--black
+{
+  @include retina-sprite(plus--black);
+}
+
+.icon.plus--brown
+{
+  @include retina-sprite(plus--brown);
+}
+
+.icon.minus--white
+{
+  @include retina-sprite(minus--white);
+}
+
+.icon.minus--black
+{
+  @include retina-sprite(minus--black);
+}
+
+.icon.minus--brown
+{
+  @include retina-sprite(minus--brown);
+}
+
+.icon.plus--large--red
+{
+  @include retina-sprite(plus--large--red);
+}
+
+.icon.minus--large--red
+{
+  @include retina-sprite(minus--large--red);
+}
+
+.icon.plus--xl--red
+{
+  @include retina-sprite(plus--xl--red);
+}
+
+.icon.minus--xl--red
+{
+  @include retina-sprite(minus--xl--red);
+}
+
+.icon.plus--large--white
+{
+  @include retina-sprite(plus--large--white);
+}
+
+.icon.minus--small--white
+{
+  @include retina-sprite(minus--small--white);
+}
+
+.icon.minus--small--gray
+{
+  @include retina-sprite(minus--small--gray);
+}
+
+.icon.minus--small--red
+{
+  @include retina-sprite(minus--small--red);
+}
+
+.icon.plus--small--red
+{
+  @include retina-sprite(plus--small--red);
+}
+
+.icon.plus--small--white
+{
+  @include retina-sprite(plus--small--white);
+}
+
+.icon.plus--small--gray
+{
+  @include retina-sprite(plus--small--gray);
+}
+
+//Recipe Icons
+
+.icon.vegetarian-recipe
+{
+  @include retina-sprite(vegetarian-recipes);
+}
+.icon.vegetarian-recipe--gray
+{
+  @include retina-sprite(vegetarian-recipes-brown);
+}
+.icon.vegetarian-recipe--red
+{
+  @include retina-sprite(vegetarian-recipes-red);
+}
+
+.icon.photo-recipe
+{
+  @include retina-sprite(photo-recipes);
+}
+.icon.photo-recipe--gray
+{
+  @include retina-sprite(photo-recipes-brown);
+}
+.icon.photo-recipe--red
+{
+  @include retina-sprite(photo-recipes-red);
+}
+
+.icon.healthy-recipe
+{
+  @include retina-sprite(healthy-recipes);
+}
+.icon.healthy-recipe--gray
+{
+  @include retina-sprite(healthy-recipes-brown);
+}
+.icon.healthy-recipe--red
+{
+  @include retina-sprite(healthy-recipes-red);
+}
+
+.icon.slow-cook-recipe
+{
+  @include retina-sprite(slow-cook-recipes);
+}
+.icon.slow-cook-recipe--gray
+{
+  @include retina-sprite(slow-cook-recipes-brown);
+}
+.icon.slow-cook-recipe--red
+{
+  @include retina-sprite(slow-cook-recipes-red);
+}
+
+.icon.chef-recipe
+{
+  @include retina-sprite(chefs-recipes);
+}
+.icon.chef-recipe--gray
+{
+  @include retina-sprite(chefs-recipes-brown);
+}
+.icon.chef-recipe--red
+{
+  @include retina-sprite(chefs-recipes-red);
+}
+
+.icon.grilled-recipe
+{
+  @include retina-sprite(grilled-recipes);
+}
+.icon.grilled-recipe--gray
+{
+  @include retina-sprite(grilled-recipes-brown);
+}
+.icon.grilled-recipe--red
+{
+  @include retina-sprite(grilled-recipes-red);
+}
+
+
+.icon.holiday-recipe
+{
+  @include retina-sprite(holiday-recipes);
+}
+.icon.holiday-recipe--gray
+{
+  @include retina-sprite(holiday-recipes-brown);
+}
+.icon.holiday-recipe--red
+{
+  @include retina-sprite(holiday-recipes-red);
+}
+
+.icon.member-recipe
+{
+  @include retina-sprite(member-recipes);
+}
+.icon.member-recipe--gray
+{
+  @include retina-sprite(member-recipes-brown);
+}
+.icon.member-recipe--red
+{
+  @include retina-sprite(member-recipes-red);
+}
+
+.icon.print-white
+{
+  @include retina-sprite(print-white);
+}
+
+//Crisis bar icons.
+.icon.info
+{
+  @include retina-sprite(info-icon);
+}
+
+.icon.x
+{
+  @include retina-sprite(crisis-x);
+}
+
+//recipe rating
+
+.icon.star--small--red
+{
+  @include retina-sprite(rating-star-sm-red);
+}
+
+.rating
+{
+  .icon.star--red
+  {
+    @include retina-sprite(rating_star);
+  }
+  .icon.star--white
+  {
+    @include retina-sprite(small_recipe_star_full);
+  }
+  .icon.star--small--gray
+  {
+    @include retina-sprite(rating-star-sm-dark);
+  }
+
+  &.star-4 .icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-3 .icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-2 .icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-1 .icon.star--red+.icon.star--red,
+  &.star-0 .icon.star--red
+  {
+    @include retina-sprite(rating-star-empty);
+  }
+  &.star-4 .icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white,
+  &.star-3 .icon.star--white+.icon.star--white+.icon.star--white+.icon.star--white,
+  &.star-2 .icon.star--white+.icon.star--white+.icon.star--white,
+  &.star-1 .icon.star--white+.icon.star--white,
+  &.star-0 .icon.star--white
+  {
+    @include retina-sprite(small_recipe_star_empty);
+  }
+}
+
+.wpcr_rating .rating
+{
+  &.star-4 .icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-3 .icon.star--red+.icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-2 .icon.star--red+.icon.star--red+.icon.star--red,
+  &.star-1 .icon.star--red+.icon.star--red,
+  &.star-0 .icon.star--red
+  {
+    @include retina-sprite(stroke-star);
+  }
+}
+
+// contact us
+
+.icon.phone--small--dark 
+{
+  @include retina-sprite(phone--small--dark);
+}
+
+.icon.eye--small--white 
+{
+  @include retina-sprite(eye--small--white);
+}
+
+.icon.cta-arrow-down--small--red 
+{
+  @include retina-sprite(cta-arrow-down--small--red);
+}
+
+// modal alert icon
+
+.icon.modal-alert
+{
+  @include retina-sprite(modal-alert);
+}
+
+// trade
+
+.icon.cooling-locations 
+{
+  @include retina-sprite(cooling-locations);
+}
+
+.icon.cooling-locations-dark 
+{
+  @include retina-sprite(cooling-locations-dark);
+}
+
+.icon.growing-regions 
+{
+  @include retina-sprite(growing-regions);
+}
+
+.icon.growing-regions-dark 
+{
+  @include retina-sprite(growing-regions-dark);
+}
+
+.icon.product-list 
+{
+  @include retina-sprite(product-list);
+}
+
+.icon.product-list-dark 
+{
+  @include retina-sprite(product-list-dark);
+}
+
+.icon.upc-codes 
+{
+  @include retina-sprite(upc-codes);
+}
+
+.icon.upc-codes-dark 
+{
+  @include retina-sprite(upc-codes-dark);
+}
+
+.icon.restaurants
+{
+  @include retina-sprite(restaurants);
+}
+
+.icon.restaurants-dark 
+{
+  @include retina-sprite(restaurants-dark);
+}
+
+.icon.retailers
+{
+  @include retina-sprite(retailers);
+}
+
+.icon.retailers-dark 
+{
+  @include retina-sprite(retailers-dark);
+}
+
+.icon.sales
+{
+  @include retina-sprite(sales);
+}
+
+.icon.sales-dark 
+{
+  @include retina-sprite(sales-dark);
+}

@@ -1,0 +1,36 @@
+.nutrition-info
+{
+  color: white;
+  padding-top:70px;
+  .divider
+  {
+    border-color: $white;
+  }
+}
+
+.nutrition-info__img__wrapper
+{
+  margin-bottom:20px;
+}
+
+.nutrition-info__headline--mobile
+{
+  margin-bottom:20px;
+  display:block;
+  @include bp($breakpoint-md)
+  {
+    display:none;
+  }
+}
+
+.nutrition-info__headline
+{
+  display:none;
+  color:$white;
+  margin-bottom:20px;
+  @include bp($breakpoint-md)
+  {
+    display:block;
+  }
+}
+

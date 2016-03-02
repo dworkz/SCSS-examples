@@ -1,0 +1,99 @@
+@import 'layout';
+
+// Fixes horizontal scroll when window width is smaller than desktop width
+#wrap {
+  min-width: 1000px;
+}
+
+// Fixes the 4-3-2 grids for ie8
+.search__result--recipes,
+.where-to-buy__store__wrapper,
+.p-c-s__link,
+.assets__list-item,
+.trade__pdf-button,
+.sel-recipes-grid__item {
+  clear: none;
+  @include remove-omega;
+  &.fourth {
+    @include omega;
+  }
+  &.fifth {
+    clear: both;
+  }
+}
+
+
+.selected-vids-grid {
+  .selected-vid-lnk + .selected-vid-lnk + .selected-vid-lnk {
+    @include omega;
+  }
+}
+
+
+.grid-4-3-2 {
+  clear: none;
+  @include remove-omega;
+  &.fourth {
+    @include omega;
+  }
+  &.fifth {
+    clear: both;
+  }
+}
+
+
+// Digital Cookbooks
+.digital-cookbooks__grid-item
+{
+  & + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item 
+  {
+    @include remove-omega;
+  }
+  @include span-columns(3, 24);
+  & + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item 
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item
+    + .digital-cookbooks__grid-item 
+  {
+    @include omega;
+  }
+}
+
+
+// Most Viewed Videos
+.video__links--most-viewed__wrapper {
+  .video__link--most-viewed
+  {
+    & + .video__link--most-viewed
+      + .video__link--most-viewed,
+    & + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+    {
+      @include remove-omega;
+    }
+    @include span-columns(2,8);
+
+    & + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed,
+    & + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+      + .video__link--most-viewed
+    { 
+      @include omega;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.selected-videos {
+
+  .head-line{
+    h2{
+      color: $gray--darker;
+      @include breakpoint($breakpoint-md)
+      {
+        max-width:65%;
+      }
+      @include breakpoint($breakpoint-lg)
+      {
+        max-width:100%;
+      }
+    }
+    .btn{
+      margin-bottom: 25px;
+    }
+  }
+  .divider{
+    border-color: $gray--darker;
+  }
+  .selected-vid-lnk{
+    color: $gray--darker;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    margin-bottom:20px;
+    @include span-columns(4 omega, 4);
+    @include nth-omega(1n);
+    @include bp($breakpoint-md) {
+      @include span-columns(4, 8);
+      @include remove-nth-omega(1n);
+      @include nth-omega(2n);
+    }
+    @include bp($breakpoint-lg) {
+      background: transparent;
+      color: $gray--darker;
+      @include span-columns(4, 12);
+      @include remove-nth-omega(2n);
+      @include nth-omega(3n);
+    }
+    .video__thumb-wrapper {
+      position: relative;
+      img{
+        width: 100%;
+      }
+      .video-play {
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-left:-15px;
+        margin-top:-18px;
+      }
+    }
+    .video-title{
+      font-size: 1em;
+      font-weight: normal;
+      letter-spacing: .07em;
+      line-height: 1.25em;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-family:'brandon-bld';
+    }
+  }
+}
+
+.selected-vids-grid a:nth-child(3) {
+  @include bp($breakpoint-md) {
+  display: none;
+  }
+
+    @include bp($breakpoint-lg) {
+    display: block;
+  }
+    @include bp($breakpoint-sm) {
+    display: block;
+  }
+}
+

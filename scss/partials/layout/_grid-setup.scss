@@ -1,0 +1,59 @@
+/* ==========================================================================
+   BOX-SIZING
+   ========================================================================== */
+
+@include border-box-sizing;
+
+/* ==========================================================================
+   GRID SETUP
+   ========================================================================== */
+
+@if $disable-responsive == false 
+{
+
+  //mobile first
+  .grid-construct{
+    $total-columns: 4;
+    $column-width: 3.625em; // 58px
+    $gutter-width: 1.5em; // 24px //space between columns
+    $grid-padding: 1.250em; // 20px
+    $container-width: 62.5em;  //1000px / 16 = 62.5em
+    //$container-style: magic;
+    @include container; 
+    //@include susy-grid-background;
+  }
+
+  // for medium devices
+  @include breakpoint($breakpoint-md) {
+    .grid-construct {
+      $total-columns: 8;
+      @include container;
+      //@include susy-grid-background;
+    }
+  }
+
+  // for large devices
+  @include breakpoint($breakpoint-lg) {
+    .grid-construct {
+      $total-columns: 12;
+      @include container;
+     //@include susy-grid-background;
+    }
+  }
+
+} 
+
+@else if $disable-responsive == true 
+
+{
+
+  .grid-construct{
+    $total-columns: 12;
+    $column-width: 3.625em; // 58px
+    $gutter-width: 1.5em; // 24px //space between columns
+    $grid-padding: 1.250em; // 20px
+    $container-width: 60em;  //1000px / 16 = 62.5em
+    // $container-style: static;
+    @include container;
+  }
+}

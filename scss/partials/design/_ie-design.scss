@@ -1,0 +1,212 @@
+////////////////////////
+// IE Design Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file. This is for Internet Explorer's Use.
+//
+// All styling, non box model properties go here
+////////////////////////
+
+
+// PREVENT DIV SCALING FOR PAGE ELEMENTS
+.header--main,
+.footer-social-catch,
+.footer-social-catch .footer__wrapper
+{
+  min-width: 1000px;
+}
+
+// MAIN NAV
+.nav--main {
+  li {
+    display: inline;
+    zoom: 1;
+    &.site-select__subnav-item
+    {
+      display:table;
+    }
+    a
+    {
+//      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../img/hIEfix.png,sizingMethod=crop);
+      zoom:1;
+    }
+  }
+}
+
+.nav--main__list {
+  .nav--main__menu-item {
+    a.nav--subnav__menu-item__link,
+    a.nav--main__menu-item__link {
+      min-height: 82px;
+    }
+
+    &.nav--main__menu-item__tmpl--products-landing,
+    &.multi-line-subnav {
+      a.nav--subnav__menu-item__link,
+      a.nav--main__menu-item__link {
+        min-height: 0px;
+      }
+    }
+
+  }
+}
+
+.nav--main__list .nav--main__menu-item:hover a.nav--subnav__menu-item__link
+{
+//  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../img/hIEfix.png,sizingMethod=crop);
+}
+
+
+.recipe-flyout__button.fourth {
+  margin-right: 0;
+  float: right;
+}
+
+.search__result--recipes.fourth
+{
+  margin-right:0;
+  float:right;
+  clear:none;
+}
+.search__result--recipes.fifth
+{
+  clear:left;
+}
+
+// //setting/removing omegas in grid.
+// .sel-recipes-grid {
+//   @include bp($breakpoint-lg) {
+//   //omega(4n) + padding for ie8
+//     .fourth {
+//       float: right;
+//       margin: 0;
+//       // padding-bottom: 80px;
+//     }
+//     .fifth {
+//       clear: both;
+//     }
+//   }
+// } //ends sel-recipes-grid .row
+
+
+// LARGE IMAGE MODULE
+.large-image-module{
+    .large-image{
+      -ms-behavior: url("/wp-content/themes/om/app/backgroundsize.min.htc");
+    }
+}
+
+
+// MAP
+.map__wrapper{
+  padding-bottom: 0;
+  .map__img--container{
+    -ms-behavior: url("/wp-content/themes/om/app/backgroundsize.min.htc");
+  }
+
+  .grid-construct {
+    .panel-card--opacity {
+      top: 60px !important;
+      background-color: $black;
+      filter: alpha(opacity=70);
+    }
+  }
+}
+
+
+// MODAL
+.modal {
+  top: 0;
+  min-width: 766px;
+}
+.modal-dialog
+{
+  top:50%;
+}
+
+.modal--alert {
+  max-width: 960px;
+}
+
+
+// FOOTER
+.footer-social-catch,
+.footer-social-catch .footer__wrapper
+{
+  position: relative;
+}
+
+.footer__social-icon__wrapper
+{
+  min-width: 270px;
+}
+
+.footer__social-icon 
+{
+  height: 69px;
+}
+
+
+// Weird line being rendered in ie8
+#audiocaptcha 
+{
+  display: none;
+}
+
+img.dit 
+{
+  width: 100%;
+  max-width: 500px;
+}
+
+
+// BUTTONS
+.number-stepper__control 
+{
+  min-width: 0;
+}
+
+/*
+.close__btn {
+  background-color: $black;
+  background: transparent\9;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+  zoom: 1;
+  .close__btn--text {
+    filter: alpha(opacity=100);
+  }
+}
+*/
+
+// WHERE TO BUY LOGOS
+.where-to-buy__store__image--inner--table 
+{
+  display: block;
+  height: 100%;
+}
+
+.where-to-buy__store__image--inner--table-cell
+{
+  display: block;
+  height: 100%;
+  position: relative;
+}
+.where-to-buy__store__image
+{
+  max-width: 192px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.submit-recipe__check-wrap.grid-end {
+  margin-right: 0;
+  float: right;
+}
+
+.header--main .search-bar__field
+{
+  width: 83%;
+}

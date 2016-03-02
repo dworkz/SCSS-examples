@@ -1,0 +1,68 @@
+/* 
+ Overrides for qtip styles
+ */
+
+ .ui-tooltip, .qtip {
+	max-width: none !important;
+}
+.qtip-default {
+	border-width: 0px !important;
+	background-color: transparent !important;
+}
+
+.qtip-content {
+padding: 0px !important;
+	
+	 img {
+		@include box-shadow(0 5px 15px rgba(0,0,0,.5));
+	}
+}
+
+img.dit {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.qtip {
+	z-index: 10200 !important;
+}
+#qtip-overlay {
+	z-index: 10000 !important;
+}
+.qtip-active {    
+	z-index: 10100 !important;
+	}
+
+@include breakpoint($breakpoint-md) {
+	.qtip-content {
+		width: 280px;
+		img {
+			max-width: 280px;
+		}
+	}
+      .qtip {
+	width: 280px;
+}
+}
+@include breakpoint($breakpoint-lg) {
+.qtip-content {
+	width: 400px;
+	height: auto;	
+	border: none;
+	img {
+		max-width: 400px;
+	}
+}
+.qtip {
+	width: 400px;
+}
+}
+
+@include breakpoint($breakpoint-sm) {
+		.qtip-content{
+		width: 200px;
+			img {
+				max-width: 200px;
+			}
+		}
+}

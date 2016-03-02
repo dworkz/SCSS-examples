@@ -1,0 +1,115 @@
+////////////////////////
+// Global
+////////////////////////
+
+body,
+html {
+  font-family: 'apercu';
+  color: $gray--darker;
+  background-image: url('../img/backgrounds/main_bg.jpg');
+  min-width:300px;
+  @include bp($breakpoint-sm) {
+    -ms-overflow-style: none;
+  }
+  @include bp($breakpoint-md) {
+    -ms-overflow-style: none;
+  }
+  @include bp($breakpoint-lg) {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+// Anchors
+a {
+  text-decoration: underline;
+  color: $red;
+  &:hover{text-decoration: none;}
+  outline:none !important;
+//&:active{color:white; background-color: $gray--darker;}
+}
+
+//Typography styles
+
+h1,h2,h3,h4,h5,h6,
+.alpha,.beta,.gamma,.delta,.epsilon,.zeta {
+  font-family: 'brandon-bld';
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+h1,
+.alpha{
+  @include font-size(3);
+  line-height: 1.3em;
+  @include bp($breakpoint-sm)
+  {
+    @include font-size(2.4);
+  }
+}
+
+h2,
+.beta{
+  @include font-size(2);
+  line-height: 1.22em;
+  @include bp($breakpoint-sm)
+  {
+    @include font-size(1.6);
+  }
+}
+
+h3,
+.gamma{
+  @include font-size(1);
+  line-height: 1.1em;
+}
+
+h4,
+.delta{
+  @include font-size(.925);
+  line-height: 1em;
+}
+
+h5,
+.epsilon{
+  @include font-size(.8);
+}
+
+h6,
+.zeta{
+}
+
+.fl{float:left;}
+.fr{float:right;}
+.pos-rel{position:relative;}
+
+.main_bg,.marble--white{background-image: url('../img/backgrounds/main_bg.jpg');}
+.marble_bg,.marble--black{background-image: url('../img/backgrounds/marble-black.jpg');}
+.marble--gray{background:white;}
+.tile-pattern{background: url('../img/backgrounds/flyout_bg.jpg') repeat;}
+
+.visually-hidden
+{
+  position:absolute;
+  left:-9999px;
+  font-size:0;
+  text-indent:-9999px;
+  text-transform:capitalize;
+  color:transparent;
+  background-color:transparent;
+}
+
+p+p
+{
+  margin-top:1.3em;
+}
+
+::selection
+{
+  background: $red;
+  color:$white;
+}
+::-moz-selection
+{
+  background: $red;
+  color:$white;
+}

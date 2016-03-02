@@ -1,0 +1,203 @@
+.career__opportunities__wrapper,
+.career__opportunities__wrapper--none
+{
+  margin:35px 0 0;
+}
+
+.career__questions
+{
+  padding-top:20px;
+  width:100%;
+  line-height:1.4em;
+  .career__questions__wrapper &
+  {
+    padding-top:60px;
+    border-top:1px solid $gray--darker;
+  }
+}
+
+.career__contact--email
+{
+  display:block;
+  margin-top:20px;
+}
+
+.career__contact--info
+{
+  margin-top:20px;
+  @include font-size(.875);
+  line-height:1.3em;
+}
+
+.career__opportunity
+{
+  border-bottom:1px solid $black;
+
+  &:first-child
+  {
+    border-top:1px solid $black;
+  }
+}
+
+.career__opportunity__link
+{
+  padding:15px 32px 15px 0;
+  width:100%;
+  display:block;
+  text-decoration:none;
+  position:relative;
+  &:hover
+  {
+    color:$gray--darker;
+  }
+  &:active
+  {
+    background:transparent;
+    color:$gray--darker;
+  }
+}
+
+.icon.cta-arrow--large
+{
+  position:absolute;
+  top:50%;
+  right:0;
+  margin-top:-13px;
+  @extend .cta-arrow--large--red;
+  .career__opportunity__link:hover &
+  {
+    @extend .cta-arrow--large--gray;
+  }
+}
+
+.career--individual__wrapper
+{
+  margin-top:70px;
+}
+
+.career--individual__details__wrapper
+{
+  width:100%;
+  margin-top:35px;
+  overflow:hidden;
+}
+
+.career--individual__details--description
+{
+  float:left;
+}
+
+.description__item__label
+{
+  font-weight:bold;
+}
+
+.career--individual__details--buttons
+{
+  float:right;
+  max-width:50%;
+}
+
+.career--individual__description__wrapper
+{
+  margin-top:35px;
+  overflow:hidden;
+}
+
+.career--individual__description--copy
+{
+  .career__contact--info
+  {
+    margin-bottom:35px;
+    @include bp($breakpoint-md)
+    {
+      margin-bottom:70px;
+    }
+  }
+}
+
+.upload-resume__file--wrapper
+{
+  clear:both;
+  @include bp($breakpoint-lg)
+  {
+    clear:none;
+  }
+}
+
+.upload-resume__file--upload
+{
+  margin: 0 0 0 7px;
+  padding-right:60px;
+}
+
+.upload-resume__submit
+{
+  padding-right:85px;
+}
+
+.upload-resume__textarea
+{
+  clear:both;
+  width:100%;
+  height:300px;
+  margin-top:10px;
+}
+
+.upload-resume__button__wrapper
+{
+  @include bp($breakpoint-sm)
+  {
+    clear:both;
+  }
+  @include bp($breakpoint-md)
+  {
+    width:100%;
+  }
+  @include bp($breakpoint-lg)
+  {
+    width:65.83333%;
+  }
+}
+
+.upload-resume__submit__wrapper.error
+{
+  @include bp($breakpoint-sm)
+  {
+    padding-bottom:45px;
+  }
+  @include bp($breakpoint-md)
+  {
+    padding-bottom:35px;
+  }
+  @include bp($breakpoint-lg)
+  {
+    padding-bottom:20px;
+  }
+}
+
+.comment__wrapper
+{
+  margin-top:70px;
+  @include bp($breakpoint-sm)
+  {
+    margin-bottom: 95px;
+  }
+}
+
+.comment__wrapper--individual
+{
+  padding:20px 0;
+  border-bottom:1px solid $gray--darker;
+  &:first-child
+  {
+    border-top:1px solid $gray--darker;
+    margin-top:35px;
+  }
+}
+
+.thank-you__text
+{
+  margin-bottom:50px;
+  margin-top:35px;
+}

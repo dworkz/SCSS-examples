@@ -1,0 +1,31 @@
+#newsletter-container
+{
+  border-top:1px solid $gray--darker;
+  padding-bottom:70px;
+}
+
+.newsletter__row {
+  border-bottom: 1px solid $gray--darker;
+  padding-top: 25px;
+}
+
+.newsletter__row-heading {
+  padding-bottom: 20px;
+}
+
+.newsletter__toggle {
+  @extend .drawer-toggle--large;
+  .icon {
+    top: 5px;
+  }
+}
+
+.newsletter__row__panel {
+  padding-bottom: 35px;
+}
+.newsletter__item {
+  @extend .clearfix;
+  @include bp($breakpoint-sm) {
+    margin-bottom: 10px;
+  }
+}

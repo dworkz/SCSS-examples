@@ -1,0 +1,350 @@
+.panel{
+  overflow: hidden;
+  .panel-heading{
+    overflow: hidden;
+    position:relative;
+    a
+    {
+      text-decoration:none;
+    }
+    .icon.plus--large--red
+    {
+      right:0;
+    }
+  }
+  .panel-collapse{
+    overflow: hidden;
+    .panel-body{
+      &:before,
+      &:after {
+        content: " "; // 1
+        display: table; // 2
+      }
+      &:after {
+        clear: both;
+      }
+    }
+  }
+}
+
+.accordion__wrapper
+{
+  padding-top:70px;
+}
+.module-container+.accordion__wrapper
+{
+  padding-top:0;
+}
+
+.accordion-separator
+{
+  border-bottom:1px solid $gray--darker;
+
+  &.first
+  {
+    border-top:1px solid $gray--darker;
+  }
+}
+
+.accordion__section__header
+{
+  display: block;
+  position:relative;
+  padding: 10px 0 5px;
+  .icon.plus--large--red
+  {
+    right:0;
+  }
+}
+
+.accordion__section__header {
+  &.collapsed {
+    .accordion__section__toggle-icon {
+      @include retina-sprite(plus--xl--red);
+    }
+  }
+  .accordion__section__toggle-icon {
+    @include retina-sprite(minus--xl--red);
+  }
+}
+
+.accordion__section__toggle-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top:-13px;
+}
+
+.accordion__header
+{
+  color:$red;
+  margin-right:35px;
+}
+
+.accordion__contents
+{
+  padding-bottom:35px;
+
+  @include bp($breakpoint-sm)
+  {
+    margin-top:15px;
+
+    .col-3-12-grid+.col-9-12-grid
+    {
+      margin-top:20px;
+    }
+    .sidebar-module+.sidebar-module
+    {
+      .sidebar-img
+      {
+        margin-top:20px;
+      }
+    }
+  }
+}
+
+.accordion__image
+{
+  padding:20px 0;
+  text-align:center;
+}
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+.accordion-large-image img {
+  @include bp($breakpoint-sm) {
+  display: none;
+  }
+}
+
+.accoridon-mobile-image img {
+  display: none;
+
+  @include bp($breakpoint-sm) {
+    display: inline;
+  }
+
+}
+
+//Recycling explanation
+.recycling__label
+{
+  text-transform:uppercase;
+  font-family:'chalet';
+}
+
+.main-column-recycling__wrapper{
+  margin-top:35px;
+  ul li {
+    @include bp($breakpoint-md){
+      padding: 0px 8px;
+    }
+    @include bp($breakpoint-sm) {
+      float: none;
+      cursor: default;
+      font-family:'apercu';
+      text-transform:none;
+    }
+    @include bp($breakpoint-lg) {
+       padding: 0px 16px;
+    }
+    float: left;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    color: $red;
+    text-decoration: none;
+    font-family: 'chalet';
+    @include font-size(1.375); //22px
+    cursor: pointer;
+    margin-top: 35px;
+    position: relative;
+
+    &:hover
+    {
+      //border-bottom: 5px solid $red;
+
+    }
+    &:active,
+    &.active{
+      @include bp($breakpoint-md) {
+        border-bottom: 5px solid $red;
+      }
+      .main-column-recycling__indicator{
+        // display: block;
+      }
+    }
+  }
+}
+
+
+@include bp($breakpoint-md) {
+.main-column-recycling__wrapper ul li:last-child:after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  @include transition-property(all);
+  @include transition-duration(.5s);
+}
+
+.main-column-recycling__wrapper { 
+ ul li.active:last-child:after, ul li:first-child:hover ~ li:last-child:after {
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -516px;
+  }
+  width: 58px;
+  left: -348px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:nth-child(2):hover ~ li:last-child:after  {
+  @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -430px;
+  }
+  width: 58px;
+  left: -290px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:nth-child(3):hover ~ li:last-child:after{
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -344px;
+  }
+  width: 58px;
+  left: -232px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:nth-child(4):hover ~ li:last-child:after {
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -258px;
+  }
+  width: 58px;
+  left: -174px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:nth-child(5):hover ~ li:last-child:after {
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -172px;
+  }
+  width: 58px;
+  left: -116px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:nth-child(6):hover ~ li:last-child:after {
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: -86px;
+  }
+  width: 58px;
+  left: -58px;
+  border-bottom: 5px solid $red;
+}
+ul li.active:last-child:after, ul li:last-child:hover:after {
+ @include bp($breakpoint-lg) {
+  width: 86px;
+  left: 0px;
+  }
+  width: 58px;
+  left: 0px;
+  border-bottom: 5px solid $red;
+}
+}
+
+.main-column-recycling__indicator{
+  @include breakpoint($breakpoint-md) {
+  top: 75px;
+  left: 19px;
+   }
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $red;
+  position:absolute;
+  @include bp($breakpoint-lg) {
+   left:33px;
+   top:89px;
+  }
+  left: 30px;
+  display: none;
+}
+
+li.active .main-column-recycling__indicator {
+  display: block;
+}
+}
+
+.main-column-recycling--content__wrapper
+{
+  padding-top:40px;
+}
+
+.main-column-large-image img, .single-column-large-image img {
+   @include bp($breakpoint-sm) {
+     display: none;
+   }
+}
+
+.main-column-mobile-image img, .single-column-mobile-image img {
+  display: none;
+
+  @include bp($breakpoint-sm) {
+    display: block;
+  }
+}
+
+.mobile-main-column-recycling-content__box {
+  @include bp($breakpoint-md) {
+    display: none;
+  }
+  @include bp($breakpoint-sm) {
+    display: block;
+    color:  $gray--darker;
+    @include font-size(1);
+  }
+}
+
+.main-column-recycling-content__box {
+  @include bp($breakpoint-sm) {
+    display: none !important;
+  }
+}
+
+.main-column-recycling__icons {
+
+    @include breakpoint($breakpoint-md) {
+      .recycle-icon-large {
+        display: none;
+      }
+      .recycle-icon-small {
+        display: block;
+      }
+    }
+  @include breakpoint($breakpoint-lg) {
+    .recycle-icon-small {
+      display: none;
+    }
+    .recycle-icon-large {
+      display: block;
+    }
+  }
+  @include breakpoint($breakpoint-sm) {
+    .recycle-icon-small {
+      display: none;
+    }
+  }
+}

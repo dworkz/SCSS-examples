@@ -1,0 +1,56 @@
+////////////////////////
+// Design Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+// All styling, non box model properties go here
+////////////////////////
+
+@import 'sections/global';
+@import 'sections/components';
+@import 'sections/component-animations';
+@import 'sections/twentytwenty';
+@import 'sections/header';
+@import 'sections/modals';
+@import 'sections/carousel';
+@import 'sections/hero-area';
+@import 'sections/selected-recipes-grid';
+@import 'sections/selected-videos-grid';
+@import 'sections/large-image-carousel';
+@import 'sections/nutrition-info';
+@import 'sections/map';
+@import 'sections/main-column-modules';
+@import 'sections/sidebar-modules';
+@import 'sections/meet-our-people';
+@import 'sections/certificates';
+@import 'sections/accordion-builder';
+@import 'sections/ask-the-chef';
+@import 'sections/submit-recipes';
+@import 'sections/digital-cookbooks';
+@import 'sections/contact-us';
+@import 'sections/arti-site';
+@import 'sections/recipes';
+@import 'sections/recipe-flyout';
+@import 'sections/video';
+@import 'sections/careers';
+@import 'sections/news-press-releases';
+@import 'sections/search';
+@import 'sections/crisis-bar';
+@import 'sections/share-bar';
+@import 'sections/cooking-serving';
+@import 'sections/prepare-cook-serve';
+@import 'sections/assets';
+@import 'sections/where-to-buy';
+@import 'sections/products-landing';
+@import 'sections/sale-locations';
+@import 'sections/three-panel';
+@import 'sections/sitemap';
+@import 'sections/footer';
+@import 'sections/questions';
+@import 'sections/newsletters';
+@import 'sections/wysiwyg';
+@import 'sections/trade';
+@import 'sections/qtip';
+@import 'sections/where-to-buy-landing';

@@ -1,0 +1,30 @@
+////////////////////////
+// Print File
+//
+// This file gets turned into style.css. This file should really
+//  hold nothing except for imports of your base, layout, and design
+//  partials.
+// This file is styles specific to Printed files.
+////////////////////////
+$legacy-support-for-ie6: false; // http://compass-style.org/reference/compass/support/
+$disable-responsive: true;
+
+////////////////////////
+// Base Import
+////////////////////////
+@import 'partials/global/base';
+
+////////////////////////
+// Import Style Guide
+////////////////////////
+@import 'partials/styleguide/style-guide';
+
+////////////////////////
+// Import Layout
+////////////////////////
+@import 'partials/layout/print-layout';
+
+////////////////////////
+// Import Design
+////////////////////////
+@import 'partials/design/print-design';

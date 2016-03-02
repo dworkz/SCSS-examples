@@ -1,0 +1,20 @@
+.share-bar{
+	width: 100%;
+	background-image: url('../img/backgrounds/carousel-wood-texture.png');
+	background-color: lighten($gray--darker,5%);
+	border-bottom: 6px solid darken($gray--darker,10%);
+	height:50px;
+	color:white;
+}
+
+.share-icons__wrapper{
+	display: inline-block;
+	h3{@include font-size(1);}
+	padding:12px 0;
+
+	ul li{
+		float:left; 
+
+		margin-right: 30px;
+	}
+}

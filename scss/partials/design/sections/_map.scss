@@ -1,0 +1,148 @@
+.map__wrapper{
+  padding: 0;
+  position: relative;
+  @include bp($breakpoint-lg) {
+    max-height: 600px;
+    padding: 0px 0 165px 0;
+  }
+  @include bp($breakpoint-sm) {
+    display: none
+  }
+  .map__img--container{
+    @include bp($breakpoint-md) {
+        @include background-size(cover);
+        display: block;
+        background-position: 43% center;
+        position: relative;
+        height: 400px;
+      }
+    @include bp($breakpoint-lg) {
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    }
+    @include bp($breakpoint-sm) {
+      display: block;
+      height: 412px;
+      position: relative;
+    }
+  }
+  .grid-construct.map__panel__wrapper{
+    @include bp($breakpoint-lg) {
+      position: relative;
+      height: 600px;
+    }
+    .panel-card{
+      margin-top: 0px;
+      padding: 40px 15px;
+      position: relative;
+      z-index: 100;
+      @include bp($breakpoint-md) {
+        @include span-columns(4 omega, 8);
+      }
+      @include bp($breakpoint-md) {
+        @include span-columns(6 omega, 12);
+        float: left;
+        width: 100%;
+        padding:35px 0 0;
+      }
+      @include bp($breakpoint-lg) {
+        padding: 40px 15px;
+        float: right;
+        @include span-columns(4 omega,4);
+        width: 48.75%;
+        background-color: rgba($black, .7);
+        color: white;
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: 50%;
+        -webkit-transform:translate(0, -50%);
+       -moz-transform:translate(0, -50%);
+        -ms-transform:translate(0, -50%);
+         -o-transform:translate(0, -50%);
+            transform:translate(0, -50%);
+      }
+    }
+  }
+  .panel-card--opacity {
+    @include bp($breakpoint-md) {
+      background-color: rgba($black, 0);
+      color: $gray--darker;
+      .divider {
+        display: none;
+      }
+    }
+    @include bp($breakpoint-lg) {
+     .divider {
+        display: block;
+      }
+    }
+  }
+}
+
+.map__headline--tablet
+{
+  @include bp($breakpoint-sm)
+  {
+    display:none;
+  }
+  @include bp($breakpoint-md)
+  {
+    display:block;
+    margin-bottom:20px;
+  }
+  @include bp($breakpoint-lg)
+  {
+    display:none;
+  }
+}
+
+.map__headline
+{
+  @include bp($breakpoint-sm)
+  {
+    margin-bottom:20px;
+  }
+  @include bp($breakpoint-md)
+  {
+    display:none;
+  }
+  @include bp($breakpoint-lg)
+  {
+    display:block;
+  }
+}
+
+.mobile-map__wrapper {
+  padding-bottom:70px;
+ .map__img--container {
+   background-repeat: no-repeat;
+   height: 413px;
+   background-position: 100% center;
+ }
+  @include bp($breakpoint-md) {
+    display: none;
+  }
+  @include bp($breakpoint-sm) {
+    display: block;
+      .panel-card__headline {
+      margin-bottom: 20px;
+    }
+    .panel-card--opacity {
+      padding-top:35px;
+      margin-top: 0px;
+      background-color: rgba($black, 0);
+      color: $gray--darker;
+    .divider {
+      display: none;
+    }
+    }
+
+  }
+}

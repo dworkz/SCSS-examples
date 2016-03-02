@@ -1,0 +1,135 @@
+.where-to-buy-landing {
+  margin-top: -102px;
+  z-index: 5;
+  position: relative;
+  margin-bottom:95px;
+
+  h1 {
+     @include bp($breakpoint-sm) 
+    {
+      .page-title--hero h1 {
+        font-size: 2em;
+      }
+    } 
+
+
+  }
+
+  .where-to-buy-landing__link-button {
+    text-align: center;
+      height: 175px;
+    margin-bottom: 12px;
+    &:nth-child(3n)
+    {
+      margin-bottom: 0px;
+    }
+  
+    &.third
+    {
+      clear:none;
+    }
+  }
+  
+  a {
+    font-family: 'brandon-bld';
+    //background-color: $red;
+    display: block;
+    color: $white;
+    @include border-radius(20px);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    line-height: 1.25em;
+
+    @include bp($breakpoint-sm) 
+    {
+      padding: 35px 40px 0px;
+    }
+     @include bp($breakpoint-md) 
+    {
+      padding: 35px 20px 0px;
+    }
+    @include bp($breakpoint-lg) 
+    {
+      padding: 35px 40px 0px;
+    }
+  }
+
+  a.wtbl--restaurants,  a.wtbl--retailers, a.wtbl--sales {
+    height: 100%;
+  } 
+
+  a.wtbl--restaurants  {
+    &:hover .icon.restaurants {
+      @include retina-sprite(restaurants-dark);
+      &:active
+      {
+        @extend .icon.restaurants;
+      }
+    }
+  }
+
+  a.wtbl--retailers {
+    &:hover .icon.retailers {
+      @include retina-sprite(retailers-dark);
+      &:active
+      {
+        @extend .icon.retailers;
+      }
+    }
+  }
+
+  a.wtbl--sales {
+    .icon.sales {
+      margin-bottom: 0px;
+    }
+
+    &:hover .icon.sales {
+      @include retina-sprite(sales-dark);
+      &:active
+      {
+        @extend .icon.sales;
+      }
+    }
+  }
+
+  a.btn--inactive {
+    background-color: $gray--inactive;
+    @include border-radius(20px);
+
+    &:hover .icon.restaurants {
+      @include retina-sprite(restaurants);
+      &:active
+      {
+        @extend .icon.restaurants;
+      }
+    }
+
+    &:hover .icon.retailers {
+      @include retina-sprite(retailers);
+      &:active
+      {
+        @extend .icon.retailers;
+      }
+    }
+
+    &:hover .icon.sales {
+      @include retina-sprite(sales);
+      &:active
+      {
+        @extend .icon.sales;
+      }
+    }
+
+  }
+
+  span.icon {
+    margin-bottom: 10px;
+  }
+
+  span {
+    font-family: 'brandon-bld';
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
+}

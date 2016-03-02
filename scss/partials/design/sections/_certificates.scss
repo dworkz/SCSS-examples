@@ -1,0 +1,65 @@
+.certificates__wrapper
+{
+  margin-bottom:35px;
+  @extend .marble_bg;
+}
+
+.certificate__logo
+{
+  padding:20px;
+  @include bp($breakpoint-sm)
+  {
+    width: 90%;
+    background: $white;
+    margin: 30px auto 0;
+  }
+  @include bp($breakpoint-md)
+  {
+    margin-right:0;
+  }
+  img
+  {
+    display:block;
+    width:auto;
+    height:auto;
+    max-height:200px;
+    margin:0 auto;
+    @include bp($breakpoint-md)
+    {
+      width:100%;
+      max-height:none;
+      margin:0;
+    }
+  }
+}
+
+.certificate__regions
+{
+  height:100%;
+  overflow:hidden;
+  padding: 20px;
+  color:white;
+  @include bp($breakpoint-md)
+  {
+    padding-left:0;
+  }
+  @include bp($breakpoint-lg)
+  {
+    padding-top:6%;
+  }
+
+}
+
+.certificate__regions__item
+{
+  width:100%;
+  @include bp($breakpoint-lg)
+  {
+    width:30%;
+    margin-left:5%;
+    &:first-child
+    {
+      margin-left:0;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.file-status
+{
+  margin-top:10px;
+}
+
+.btn--red#file
+{
+  padding-right:25px;
+}
+
+.submit-recipe__check-wrap {
+  margin-bottom: 20px;
+  @include bp($breakpoint-md) {@include span-columns(5, 12); margin-right: 7.5%;}
+  @include bp($breakpoint-lg) {@include span-columns(4, 12); }
+}
+
+.submit-recipe__checkbox {
+  position: absolute;
+}
+
+.submit-recipe__check-wrap__label {
+
+  @include bp($breakpoint-md) {
+    padding-left: 37px;
+  }
+  @include bp($breakpoint-lg) {
+    padding-left: 40px;
+  }
+
+  @include bp($breakpoint-sm) {
+    padding-left: 40px;
+  }
+  display: block;
+  padding-top:5px;
+}
+
+@include bp($breakpoint-md) {
+  .grid-end + .submit-recipe__check-wrap {
+  clear: none;
+}
+}
+@include bp($breakpoint-lg) {
+.grid-end + .submit-recipe__check-wrap {
+  clear: both;
+}
+}
+
+.submit-recipe__input--full {
+  @include bp($breakpoint-md) {
+   .number-stepper__ui {
+      margin-bottom: 10px;
+    }
+  }
+  @include bp($breakpoint-sm) {
+    .number-stepper__ui {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.submit-recipe__check-wrap:nth-child(7) {
+  @include bp($breakpoint-md) {
+    clear: left;
+  }
+  @include bp($breakpoint-lg) {
+    clear: none;
+  }
+}
+
+body.page-template-submit-a-recipe-php iframe[src="about:blank"]{
+  display:none;
+}
+
+.form__input__label--number
+{
+  font-family:"brandon-bld";
+  text-transform:uppercase;
+  margin-left:.5em;
+}
+
+.form__input__wrapper--number
+{
+  .form__input
+  {
+    width:60px;
+    padding-left:0;
+    text-align:center;
+    @include bp($breakpoint-lg)
+    {
+      width:47%;
+      padding-left:15px;
+      text-align:left;
+    }
+  }
+  &:first-child
+  {
+    margin:10px 0;
+  }
+  @include bp($breakpoint-md)
+  {
+    float:right;
+    width:49%;
+    &:first-child
+    {
+      float:left;
+      margin:0;
+    }
+  }
+}

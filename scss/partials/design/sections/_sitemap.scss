@@ -1,0 +1,42 @@
+.sitemap__page__wrapper {
+  margin-bottom: 20px;
+}
+
+.sitemap__grid {
+  @extend .clearfix;
+  border-bottom: 1px solid $gray--darker;
+  padding: 20px 0;
+  // margin-bottom: 40px;
+}
+
+.sitemap__section {
+  &:last-child {
+    .sitemap__grid {
+      border-bottom: 0;
+    }
+  }
+}
+
+.sitemap__section__title {
+  display: inline-block;
+  margin-top: 40px;
+  br {
+    display: none;
+  }
+}
+
+.sitemap__page,
+.sitemap__subpage {
+  display: block;
+}
+
+.sitemap__page {
+  font-family: 'brandon-bld';
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.sitemap__subpage {
+  padding-left: 15px;
+  @include font-size(.9);
+}

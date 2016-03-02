@@ -1,0 +1,373 @@
+body.page-template-ask-the-chef-php,
+html.ask-the-chef-php
+{
+  @extend .marble--black; 
+}
+
+.carousel--hero__bg
+{
+  position:relative;  
+  left:0; 
+  top:0;
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  img
+  {
+    width:100%;
+  }
+  .carousel--hero__bg--inner
+  {
+    max-height:551px;
+    overflow:hidden;
+    @include bp($breakpoint-md)
+    {
+      width:70%;
+    }
+    @include bp($breakpoint-lg)
+    {
+      width:60%;
+    }
+  }
+}
+
+.chef__hero
+{
+  z-index:0;
+}
+
+.chef__gradient
+{
+  @include bp($breakpoint-sm)
+  {
+    display:none;
+  }
+  @include bp($breakpoint-md)
+  {
+    width:40%;
+    height:100%;
+    max-height:551px;
+    position:absolute;
+    top:0;
+    right:0;
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(20%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 );
+  }
+  @include bp($breakpoint-lg)
+  {
+    width:50%;
+  }
+}
+
+html.ask-the-chef-php .page-title--hero
+{
+  top:100px;
+  width:100%;
+  z-index:0;
+  position:absolute;
+}
+
+.chef__hero.placeholder
+{
+  @include bp($breakpoint-sm)
+  {
+    display:none;
+  }
+  @include bp($breakpoint-md)
+  {
+    display:block;
+    opacity:0;
+    width:180%;
+    position:relative;
+    top:0;
+    padding:0;
+  }
+  @include bp($breakpoint-lg)
+  {
+    display:none;
+  }
+}
+
+.chef__wrapper
+{
+  position:relative;
+  margin-bottom:15px;
+  @include bp($breakpoint-md)
+  {
+    margin-bottom:70px;
+  }
+}
+
+.chef__wrapper--right--outer
+{
+  position:absolute;
+  width:100%;
+  top:100px;
+  z-index:1;
+  @include bp($breakpoint-sm)
+  {
+    top:0;
+    position:relative;
+  }
+}
+
+.chef__text__wrapper
+{
+  position:relative;
+  z-index:2;
+}
+
+.chef__panels
+{
+  margin-top:70px;
+  @include bp($breakpoint-sm)
+  {
+    margin-top:35px;
+  }
+}
+
+.panel-card--chef
+{
+  padding-top: 20px;
+  margin-top: 20px;
+  position: relative;
+  @extend .marble--white;
+  @include bp($breakpoint-sm)
+  {
+    padding:20px 15px;
+  }
+
+  .btn{
+    margin-bottom: 20px;
+  }
+  
+  .panel-card__headline{
+    line-height:1.22;
+  }
+
+  .panel-card__copy{
+    margin-top:10px;
+    @include font-size(.875);
+    line-height:1.57em;
+    padding-bottom:10px;
+    overflow:hidden;
+    .btn
+    {
+      margin-bottom:0;
+      @include bp($breakpoint-lg)
+      {
+        float:left;
+      }
+    }
+  }
+
+  @include bp($breakpoint-md) {
+    width: 100%;
+    display: inline-block;
+    padding: 40px 30px 30px 30px;
+    color: $gray--darker;
+  } //ends lg
+}
+
+.chef-note__headline,
+.chef-note__copy,
+.chef__signature,
+.chef__video
+{
+  display:block;
+  margin-bottom:35px;
+}
+
+.chef__buttons
+{
+  .btn
+  {
+    &:first-child
+    {
+      margin-bottom:20px;
+    }
+    .btn--arrow,
+    .btn--plus
+    {
+      right:20px;
+    }
+    .btn--plus
+    {
+      @extend .btn--arrow;
+      @extend .icon.plus--small--white;
+    }
+    &:hover .btn--plus
+    {
+      @extend .icon.plus--small--gray;
+    }
+    &:active .btn--plus
+    {
+      @extend .icon.plus--small--white;
+    }
+    &.active
+    {
+      background: $gray--darker;
+      @include box-shadow(rgba($black,.3) 0 4px);
+      .btn--plus
+      {
+        @extend .icon.minus--small--white;
+        right:20px;
+      }
+      &:hover
+      {
+        color:$white;
+        background:$red;
+        @include box-shadow(rgba($red,.3) 0 4px);
+        .btn--plus
+        {
+          @extend .icon.minus--small--white;
+          right:20px;
+        }
+      }
+    }
+  }
+}
+
+.chef-note
+{
+  color:white;
+  @include bp($breakpoint-sm)
+  {
+    margin-top:40px;
+  }
+  @include bp($breakpoint-md)
+  {
+    margin-top:70px;
+  }
+}
+
+.chef__form__wrapper
+{
+  height:auto;
+  max-height:0;
+  padding:0;
+  overflow:hidden;
+  margin:0;
+  @include transition-property(max-height);
+  @include transition-duration(.3s);
+  &.active
+  {
+    max-height:1000px;
+    &.success
+    {
+      height:1000px;
+    }
+  }
+}
+
+.chef__form
+{
+  .form__input
+  {
+    font-family:'brandon-bld';
+    text-transform:uppercase;
+    @include font-size(.75);
+  }
+}
+
+.chef__question--q,
+.chef__question--a
+{
+  float:left;
+  margin-right:.5em;
+}
+
+
+.chef__select__wrapper
+{
+  height:55px;
+}
+.chef__form__input--select
+{
+  @extend .assets-form__select-ui;
+}
+.chef__form .chef__form__select-ui__toggle
+{
+  @extend .assets-form__select-ui__toggle;
+  padding:10px 10px 10px 15px !important;
+}
+.chef__form__select-ui__list
+{
+  @extend .assets-form__select-ui__list;
+}
+.chef__form__select-ui__list-item
+{
+  @extend .assets-form__select-ui__list-item;
+  width:50%;
+  float:left;
+}
+.chef__form__select
+{
+  @extend .assets-form__select;
+}
+
+.chef__cta-panel
+{
+  margin-bottom:70px;
+}
+
+
+//RECIPES AND COOKING PAGE - ASK THE CHEF SECTION
+.ask-the-chef__wrapper{
+  background: white;
+  overflow: hidden;
+  position: relative;
+  .ask-the-chef--right-col{
+    @include background-size(cover);
+    -ms-behavior: url("../../backgroundsize.min.htc");
+    height: 100%;
+    left: 50%;
+    margin-left: 15px;
+    position: absolute;
+    top: 0px;
+    width: 50%;
+    background-position-x: 20%;
+    background-repeat: no-repeat;
+  }
+  .grid-construct{
+    position: relative;
+  }
+  .ask-the-chef--left-col{
+    display: block;
+    padding: 68px 0px;
+    position: relative;
+    @include span-columns(4 omego, 4);
+    @include bp($breakpoint-md) {
+      @include span-columns(4, 8);
+    }
+    @include bp($breakpoint-lg) {
+      @include span-columns(6, 12);
+    }
+    .btn{
+      display: inline-block;
+    }
+    p{
+      margin-bottom: 12px;
+      margin-top: 12px;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width:750px)
+{
+  body.page-template-ask-the-chef-php h1
+  {
+    max-width:50%;
+  }
+
+  .chef__text__wrapper
+  {
+    margin-bottom:190px;
+  }
+}

@@ -1,0 +1,91 @@
+.trade {
+
+  margin-top: -102px;
+  z-index: 5;
+  position: relative;
+  padding-bottom:70px;
+
+  .trade__pdf-button {
+    text-align: center;
+    &.fourth
+    {
+      clear:none;
+    }
+  }
+  
+  a {
+    font-family: 'brandon-bld';
+    background-color: $red;
+    display: block;
+    color: $white;
+    @include border-radius(20px);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 15px;
+    height: 195px;
+
+    @include bp($breakpoint-sm)
+    {
+      padding: 50px 10px 0px;
+    }
+    @include bp($breakpoint-md)
+    { 
+      padding: 50px 20px 0px;
+    }
+    @include bp($breakpoint-lg)
+    {
+      padding: 50px 55px 0px;
+    }
+  }
+
+  a.trade--product  {
+    &:hover .icon.product-list {
+      @include retina-sprite(product-list-dark);
+      &:active
+      {
+        @extend .icon.product-list;
+      }
+    }
+  }
+
+  a.trade--upc {
+    &:hover .icon.upc-codes {
+      @include retina-sprite(upc-codes-dark);
+      &:active
+      {
+        @extend .icon.upc-codes;
+      }
+    }
+  }
+
+  a.trade--growing {
+    &:hover .icon.growing-regions {
+      @include retina-sprite(growing-regions-dark);
+      &:active
+      {
+        @extend .icon.growing-regions;
+      }
+    }
+  }
+
+  a.trade--cooling {
+    &:hover .icon.cooling-locations {
+      @include retina-sprite(cooling-locations-dark);
+      &:active
+      {
+        @extend .icon.cooling-locations;
+      }
+    }
+  }
+
+  span.icon {
+    margin-bottom: 10px;
+  }
+
+  span {
+    font-family: 'brandon-bld';
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
+}

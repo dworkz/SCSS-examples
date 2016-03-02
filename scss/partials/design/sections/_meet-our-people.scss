@@ -1,0 +1,77 @@
+body.page-template-meet-the-team-php .text-block
+{
+  margin-top:-50px;
+  padding-bottom:35px;
+  .divider
+  {
+    display:none;
+  }
+}
+
+.people-container{
+  position: relative;
+  overflow: hidden;
+  .grid__item {
+    padding-top: 0;
+    margin-top: 25px;
+    outline: 0;
+    position:relative;
+    &:focus{
+      
+    }
+  }
+  .person-bio {
+    position: absolute;
+    padding: 30px;
+    color: #fff;
+    z-index:55;
+    text-transform: uppercase;
+    @include span-columns(4 omega, 4);
+    @include bp($breakpoint-lg){
+      @include span-columns(8 omega, 8);
+    }
+    @include bp($breakpoint-lg){
+      @include span-columns(12 omega, 12);
+    }
+    @extend .marble_bg;
+    h3 {
+      font-size: 2em;
+      font-weight: normal;
+      color: #fff;
+    }
+    h4 {
+      font-size: 1.3em;
+      font-weight: normal;
+    }
+    p {
+      text-transform: none;
+      margin-top: 14px;
+    }
+    .people--hero__indicator {
+      width: 0; 
+      height: 0; 
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 16px solid $gray--marble;
+      position:absolute;
+      top:-16px;
+      left:66px;
+    }
+  }
+  .meet-our-people {
+    overflow: auto;
+    padding-bottom:70px;
+  }
+}
+
+.person-headshot
+{
+  img
+  {
+    border:3px solid transparent;
+  }
+  &.current img
+  {
+    border:3px solid $red;
+  }
+}

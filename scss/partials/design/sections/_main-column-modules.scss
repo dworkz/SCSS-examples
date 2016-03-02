@@ -1,0 +1,51 @@
+.main-column-video__wrapper
+{
+  padding: 35px;
+  margin:20px 0;
+}
+
+.main-column-video__header
+{
+  color:$white;
+  @include font-size(1);
+  @include bp($breakpoint-md)
+  {
+    @include font-size(1.375); //22px
+  }
+}
+
+.main-column-video__header--prefix
+{
+  color:$gray--lighter;
+}
+
+.main-column-video__caption
+{
+  color:$white;
+}
+
+.main-column-video__image-wrapper
+{
+  margin: 25px 0 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  img
+  {
+    margin-top:-9%;
+    margin-bottom:-9%;
+  }
+}
+
+.main-txt-block+.main-txt-block
+{
+  margin-top:1.3em;
+}
+
+@include bp($breakpoint-sm)
+{
+  .col-4-2-3+.col-4-6-9
+  {
+    margin-top:1.3em;
+  }
+}
